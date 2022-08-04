@@ -99,9 +99,9 @@ async def vickstickerai(client: Client, message: Message):
                if not is_chat:
                    toggle.insert_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.text, "check": "text"})
            if message.sticker:                 
-               is_chat = chatai.find_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.reply_to_message.sticker.file_id})                 
+               is_chat = chatai.find_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.sticker.file_id})                 
                if not is_chat:
-                   chatai.insert_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.reply_to_message.sticker.file_id, "check": "none"})    
+                   chatai.insert_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.sticker.file_id, "check": "none"})    
                
 
 @bot.on_message(
@@ -177,8 +177,8 @@ async def vickprivatesticker(client: Client, message: Message):
                if not is_chatai:
                    chatai.insert_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.text, "check": "text"})
            if message.sticker:                 
-               is_chat = chatai.find_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.reply_to_message.sticker.file_id})                 
+               is_chat = chatai.find_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.sticker.file_id})                 
                if not is_chat:
-                   chatai.insert_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.reply_to_message.sticker.file_id, "check": "none"})    
+                   chatai.insert_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.sticker.file_id, "check": "none"})    
                
 bot.run()
