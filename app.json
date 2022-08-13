@@ -4,6 +4,10 @@
         "BOT_TOKEN": {
             "description": "telegram bot token here",
             "required": true
+        },
+        "BOT_ID": {
+            "description": "telegram bot user id",
+            "required": true
         },       
         "MONGO_URL": {
             "description": "mongo db url here",
