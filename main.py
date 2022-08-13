@@ -10,6 +10,7 @@ import re
 API_ID = os.environ.get("API_ID", None) 
 API_HASH = os.environ.get("API_HASH", None) 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None) 
+BOT_ID = os.environ.get("BOT_ID", None) 
 MONGO_URL = os.environ.get("MONGO_URL", None)
 
 
@@ -105,7 +106,7 @@ async def vickai(client: Client, message: Message):
        vickdb = MongoClient(MONGO_URL)
        vick = vickdb["VickDb"]["Vick"] 
        is_vick = vick.find_one({"chat_id": message.chat.id})
-       if is_vick:
+       if not is_vick:
            await bot.send_chat_action(message.chat.id, "typing")
            K = []  
            is_chat = chatai.find({"word": message.text})                 
@@ -167,7 +168,7 @@ async def vickstickerai(client: Client, message: Message):
        vickdb = MongoClient(MONGO_URL)
        vick = vickdb["VickDb"]["Vick"] 
        is_vick = vick.find_one({"chat_id": message.chat.id})
-       if is_vick:
+       if not is_vick:
            await bot.send_chat_action(message.chat.id, "typing")
            K = []  
            is_chat = chatai.find({"word": message.sticker.file_unique_id})                 
