@@ -183,11 +183,11 @@ async def vickstickerai(client: Client, message: Message):
                await message.reply_sticker(f"{hey}")
    
    if message.reply_to_message:
-       kukidb = MongoClient(MONGO_URL)
-       kuki = kukidb["KukiDb"]["Kuki"] 
-       is_kuki = kuki.find_one({"chat_id": message.chat.id})
+       vickdb = MongoClient(MONGO_URL)
+       vick = kukidb["VickDb"]["Vick"] 
+       is_vick = vick.find_one({"chat_id": message.chat.id})
        if message.reply_to_message.from_user.id == bot_id: 
-           if not is_kuki:                    
+           if not is_vick:                    
                await bot.send_chat_action(message.chat.id, "typing")
                K = []  
                is_chat = chatai.find({"word": message.text})
