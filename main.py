@@ -109,16 +109,18 @@ async def vickai(client: Client, message: Message):
        if not is_vick:
            await bot.send_chat_action(message.chat.id, "typing")
            K = []  
-           is_chat = chatai.find({"word": message.text})                 
-           for x in is_chat:
-               K.append(x['text'])
-           hey = random.choice(K)
-           is_text = chatai.find_one({"text": hey})
-           Yo = is_text['check']
-           if Yo == "sticker":
-               await message.reply_sticker(f"{hey}")
-           if not Yo == "sticker":
-               await message.reply_text(f"{hey}")
+           is_chat = chatai.find({"word": message.text})  
+           k = chatai.find_one({"word": message.text})      
+           if k:               
+               for x in is_chat:
+                   K.append(x['text'])          
+               hey = random.choice(K)
+               is_text = chatai.find_one({"text": hey})
+               Yo = is_text['check']
+               if Yo == "sticker":
+                   await message.reply_sticker(f"{hey}")
+               if not Yo == "sticker":
+                   await message.reply_text(f"{hey}")
    
    if message.reply_to_message:  
        vickdb = MongoClient(MONGO_URL)
@@ -171,16 +173,18 @@ async def vickstickerai(client: Client, message: Message):
        if not is_vick:
            await bot.send_chat_action(message.chat.id, "typing")
            K = []  
-           is_chat = chatai.find({"word": message.sticker.file_unique_id})                 
-           for x in is_chat:
-               K.append(x['text'])
-           hey = random.choice(K)
-           is_text = chatai.find_one({"text": hey})
-           Yo = is_text['check']
-           if Yo == "text":
-               await message.reply_text(f"{hey}")
-           if not Yo == "text":
-               await message.reply_sticker(f"{hey}")
+           is_chat = chatai.find({"word": message.sticker.file_unique_id})      
+           k = chatai.find_one({"word": message.text})      
+           if k:           
+               for x in is_chat:
+                   K.append(x['text'])
+               hey = random.choice(K)
+               is_text = chatai.find_one({"text": hey})
+               Yo = is_text['check']
+               if Yo == "text":
+                   await message.reply_text(f"{hey}")
+               if not Yo == "text":
+                   await message.reply_sticker(f"{hey}")
    
    if message.reply_to_message:
        vickdb = MongoClient(MONGO_URL)
