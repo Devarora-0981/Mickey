@@ -30,13 +30,13 @@ async def is_admins(chat_id: int):
     ]
 
 
-@bot.on_message(filters.command("start"))
+@bot.on_message(filters.command("cstart"))
 async def start(client, message):
-        await message.reply_text("Hi! My name is Ishi. I'm an Artificial Intelligence\n /chatbot - [on|off]")
+        await message.reply_text("Hi! My name is Dev. I'm an Artificial Intelligence\n /aichatbot - [on|off]")
 
 
 @bot.on_message(
-    filters.command("chatbot off", prefixes=["/", ".", "?", "-"])
+    filters.command("aichatbot off", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbotofd(client, message):
     vickdb = MongoClient(MONGO_URL)    
@@ -59,7 +59,7 @@ async def chatbotofd(client, message):
     
 
 @bot.on_message(
-    filters.command("chatbot on", prefixes=["/", ".", "?", "-"])
+    filters.command("aichatbot on", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatboton(client, message):
     vickdb = MongoClient(MONGO_URL)    
@@ -82,10 +82,10 @@ async def chatboton(client, message):
     
 
 @bot.on_message(
-    filters.command("chatbot", prefixes=["/", ".", "?", "-"])
+    filters.command("aichatbot", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
-    await message.reply_text(f"**Usage:**\n/chatbot [on|off] only group")
+    await message.reply_text(f"**Usage:**\n/aichatbot [on|off] only group")
 
 
 @bot.on_message(
