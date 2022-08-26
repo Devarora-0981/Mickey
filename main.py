@@ -5,6 +5,7 @@ import requests
 import random
 import os
 import re
+import asyncio
 
 
 API_ID = os.environ.get("API_ID", None) 
