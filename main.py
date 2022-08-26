@@ -1,3 +1,5 @@
+#Don't remove This Line From Here. @Dev_Arora_0981 | @DevArora0981
+#Github :- Devarora0981 | Devarora0987
 from pyrogram import Client, filters
 from pyrogram.types import *
 from pymongo import MongoClient
@@ -61,14 +63,13 @@ async def restart(client, m: Message):
     await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ......")
     await asyncio.sleep(1)
     await accha.edit("ᴘʀᴇᴘᴀʀɪɴɢ ᴀ ʙᴇᴀᴜᴛɪғᴜʟ sᴛᴀʀᴛ ᴛᴇxᴛ ғᴏʀ ᴜʜ!!")
-    await accha.sleep(2)
-    await accha.delete()
-    await asyncio.sleep(1)
+    await accha.delete(3)
+    await asyncio.sleep(0.5)
     umm = await m.reply_sticker(
         "CAACAgUAAxkBAAJFxWMI1xx9Yy9A_xVfPS6Dvr2p_hOnAALzAgACkxExVofbsFCERvUMKQQ"
     )
-    await umm.delete()
-    await asyncio.sleep(2)
+    await umm.delete(3)
+    await asyncio.sleep(1)
     await m.reply_photo(
         photo = random.choice(PHOTO),
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ**\n**ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ**\n/chatbot [on/off]""",
