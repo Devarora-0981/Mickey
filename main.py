@@ -82,7 +82,7 @@ async def restart(client, m: Message):
         sticker = random.choice(STICKER),
     )
     umm.delete(5)
-    time.sleep(1)
+    await asyncio.sleep(1)
     await m.reply_photo(
         photo = random.choice(PHOTO),
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ**\n**ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ**\n/chatbot [on/off]""",
