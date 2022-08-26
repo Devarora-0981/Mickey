@@ -37,8 +37,20 @@ PHOTO = [
     "https://telegra.ph/file/bf6a3b64608eff21a9f74.jpg",
     "https://telegra.ph/file/50ee047a8725d2bfc6e95.jpg",
     "https://telegra.ph/file/47f1f43fc3f270d64ee2f.jpg",
+    "https://telegra.ph/file/fa84c7ef0e928559306db.png",
+    "https://telegra.ph/file/72b6383dec320606c324d.png",
     "https://telegra.ph/file/41114c423770f85a9999a.jpg",
 ]
+
+STICKER = [
+      "CAACAgUAAxkBAAJGIGMJFt2-r9xOLr7lL1L7am-q5jBJAAIcAwACRkjxVjVvKkhzlK7LKQQ",
+      "CAACAgUAAxkBAAJGI2MJFvltQN6C2jCVL3ODVMUDLu5wAALSAgAC2QQpV9rletyODm9RKQQ",
+      "CAACAgUAAxkBAAJGJmMJFxKEtpzp5haXbeuMclH9lThYAALzAgACkxExVofbsFCERvUMKQQ",
+      "CAACAgUAAxkBAAJGKWMJFytS1z_SGyVirU0nSj3mQg3SAAKtAgACEdswVkC0WB_0uHeqKQQ",
+      "CAACAgUAAxkBAAJGLGMJF0Pup2oX6wz5S1m-FLoS6DkQAAIZAwACZiEwVjcy4kxNywZcKQQ",
+      "CAACAgUAAxkBAAJGL2MJF1x2q6QWheiNhNetHDWAaDp4AAJfAgACbOY5VtusF7q1pF61KQQ",
+      "CAACAgUAAxkBAAJGSWMJGPFgN4bdXXhEdHcGObsm7LYdAALzAgACkxExVofbsFCERvUMKQQ",
+      "CAACAgUAAxkBAAJGOWMJF-9bNEnqk8DPhMpXXWnWcTfMAAKAAgACO9LBVwTgfA-O-iEVKQQ",
 
 DEV_OP = [
     [
@@ -56,20 +68,19 @@ DEV_OP = [
 @bot.on_message(filters.command(["start", "aistart"]))
 async def restart(client, m: Message):
     await m.delete()
-    lol = ("starting..")
-    time.sleep(0.2)
-    lol.edit_text("🎊")
-    time.sleep(0.2)
-    lol.edit_text("⚡")
-    time.sleep(0.3)
-    lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
-    time.sleep(0.2)
-    lol.edit_text("🌟")
-    lol.delete()
+    accha = await m.reply("⚡")
+    await asyncio.sleep(2)
+    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ..")
+    await asyncio.sleep(1.5)
+    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ.....")
+    await asyncio.sleep(1.5)
+    await accha.edit("ᴘʀᴇᴘᴀʀɪɴɢ ᴀ ʙᴇᴀᴜᴛɪғᴜʟ sᴛᴀʀᴛ ᴛᴇxᴛ ғᴏʀ ᴜʜ!!")
+    await accha.delete(5)
+    await asyncio.sleep(1)
     umm = await m.reply_sticker(
-        "CAACAgUAAxkBAAJFxWMI1xx9Yy9A_xVfPS6Dvr2p_hOnAALzAgACkxExVofbsFCERvUMKQQ"
+        sticker = random.choice(STICKER),
     )
-    umm.delete()
+    umm.delete(5)
     time.sleep(1)
     await m.reply_photo(
         photo = random.choice(PHOTO),
