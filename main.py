@@ -8,7 +8,7 @@ import random
 import os
 import re
 import asyncio
-
+import time
 
 API_ID = os.environ.get("API_ID", None) 
 API_HASH = os.environ.get("API_HASH", None) 
@@ -55,21 +55,22 @@ DEV_OP = [
 
 @bot.on_message(filters.command(["start", "aistart"]))
 async def restart(client, m: Message):
+    lol = ("starting...")
     await m.delete()
-    accha = await m.reply("⚡")
-    await asyncio.sleep(2)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ..")
-    await asyncio.sleep(1)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ......")
-    await asyncio.sleep(1)
-    await accha.edit("ᴘʀᴇᴘᴀʀɪɴɢ ᴀ ʙᴇᴀᴜᴛɪғᴜʟ sᴛᴀʀᴛ ᴛᴇxᴛ ғᴏʀ ᴜʜ!!")
-    await accha.delete(3)
-    await asyncio.sleep(0.5)
+    time.sleep(0.2)
+    lol.edit_text("🎊")
+    time.sleep(0.2)
+    lol.edit_text("⚡")
+    time.sleep(0.3)
+    lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
+    time.sleep(0.2)
+    lol.edit_text("🌟")
+    lol.delete()
     umm = await m.reply_sticker(
         "CAACAgUAAxkBAAJFxWMI1xx9Yy9A_xVfPS6Dvr2p_hOnAALzAgACkxExVofbsFCERvUMKQQ"
     )
-    await umm.delete(3)
-    await asyncio.sleep(1)
+    umm.delete()
+    time.sleep(1)
     await m.reply_photo(
         photo = random.choice(PHOTO),
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ**\n**ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ**\n/chatbot [on/off]""",
