@@ -124,7 +124,7 @@ async def chatboton(client, message):
     filters.command("chatbot", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
-    await message.reply_text(f"**Usage:**\n/aichatbot [on|off] only group")
+    await message.reply_text(f"**Usage:**\n/chatbot [on|off] only group")
 
 
 @bot.on_message(
