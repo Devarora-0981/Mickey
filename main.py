@@ -31,10 +31,11 @@ async def is_admins(chat_id: int):
     ]
 
 PHOTO = [
-    "https://telegra.ph/file/0820acefbb082356a19cb.mp4",
-    "https://telegra.ph/file/0754888f74366d4bd9fbd.mp4",
-    "https://telegra.ph/file/0754888f74366d4bd9fbd.mp4",
-    "https://telegra.ph/file/c323263a1746930124792.mp4",
+    "https://telegra.ph/file/3abb496a639e4911be956.jpg",
+    "https://telegra.ph/file/bf6a3b64608eff21a9f74.jpg",
+    "https://telegra.ph/file/50ee047a8725d2bfc6e95.jpg",
+    "https://telegra.ph/file/47f1f43fc3f270d64ee2f.jpg",
+    "https://telegra.ph/file/41114c423770f85a9999a.jpg",
 ]
 
 DEV_OP = [
@@ -54,22 +55,22 @@ DEV_OP = [
 async def restart(client, m: Message):
     await m.delete()
     accha = await m.reply("⚡")
-    await asyncio.sleep(1.5)
+    await asyncio.sleep(2)
     await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ..")
     await asyncio.sleep(0.5)
     await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ......")
     await asyncio.sleep(0.5)
     await accha.edit("ᴘʀᴇᴘᴀʀɪɴɢ ᴀ ʙᴇᴀᴜᴛɪғᴜʟ sᴛᴀʀᴛ ᴛᴇxᴛ ғᴏʀ ᴜʜ!!")
     await accha.delete()
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(1.5)
     umm = await m.reply_sticker(
         "CAACAgUAAxkBAAJFxWMI1xx9Yy9A_xVfPS6Dvr2p_hOnAALzAgACkxExVofbsFCERvUMKQQ"
     )
     await umm.delete()
     await asyncio.sleep(2.5)
-    await m.reply_video(
-        video = random.choice(PHOTO),
-        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ**\n*ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ*\n/chatbot [on/off]""",
+    await m.reply_photo(
+        photo = random.choice(PHOTO),
+        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ**\n**ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ**\n/chatbot [on/off]""",
         reply_markup=InlineKeyboardMarkup(DEV_OP),
     )
 
