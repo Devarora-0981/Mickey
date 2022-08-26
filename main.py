@@ -65,6 +65,7 @@ async def restart(client, m: Message):
     umm = await m.reply_sticker(
         "CAACAgUAAxkBAAJFxWMI1xx9Yy9A_xVfPS6Dvr2p_hOnAALzAgACkxExVofbsFCERvUMKQQ"
     )
+    await umm.delete()
     await asyncio.sleep(2.5)
     await m.reply_video(
         video = random.choice(PHOTO),
