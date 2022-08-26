@@ -61,13 +61,14 @@ async def restart(client, m: Message):
     await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ......")
     await asyncio.sleep(1)
     await accha.edit("ᴘʀᴇᴘᴀʀɪɴɢ ᴀ ʙᴇᴀᴜᴛɪғᴜʟ sᴛᴀʀᴛ ᴛᴇxᴛ ғᴏʀ ᴜʜ!!")
-    await accha.delete(2)
-    await asyncio.sleep(2)
+    await accha.sleep(2)
+    await accha.delete()
+    await asyncio.sleep(1)
     umm = await m.reply_sticker(
         "CAACAgUAAxkBAAJFxWMI1xx9Yy9A_xVfPS6Dvr2p_hOnAALzAgACkxExVofbsFCERvUMKQQ"
     )
     await umm.delete()
-    await asyncio.sleep(2.5)
+    await asyncio.sleep(2)
     await m.reply_photo(
         photo = random.choice(PHOTO),
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ**\n**ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ**\n/chatbot [on/off]""",
