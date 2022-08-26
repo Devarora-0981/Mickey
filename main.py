@@ -77,19 +77,14 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.75)
     await accha.edit("ᴘʀᴇᴘᴀʀɪɴɢ ᴀ ʙᴇᴀᴜᴛɪғᴜʟ sᴛᴀʀᴛ ᴛᴇxᴛ ғᴏʀ ᴜʜ!!")
     await asyncio.sleep(2)
-    await accha.edit("ʟᴇᴛs ɢᴏ 1") 
+    await accha.edit("ʟᴇᴛ's ɢᴏ ... 1") 
     await asyncio.sleep(0.5)
-    await accha.edit("2")
-    await asyncio.sleep(0.25)
-    await accha.edit("3")
-    await asyncio.sleep(0.25)
+    await accha.edit("ʟᴇᴛ's ɢᴏ ... 2")
+    await asyncio.sleep(0.5)
+    await accha.edit("ʟᴇᴛ's ɢᴏ ... 3")
+    await asyncio.sleep(0.5)
     await accha.edit("ᴀɴᴅ ғɪɴᴀʟʟʏ...")
     await accha.delete()
-    await asyncio.sleep(1)
-    umm = await m.reply_sticker(
-        sticker = random.choice(STICKER),
-    )
-    umm.delete(2)
     await asyncio.sleep(1)
     await m.reply_photo(
         photo = random.choice(PHOTO),
