@@ -55,8 +55,8 @@ DEV_OP = [
 
 @bot.on_message(filters.command(["start", "aistart"]))
 async def restart(client, m: Message):
-    lol = ("starting...")
     await m.delete()
+    lol = ("starting..")
     time.sleep(0.2)
     lol.edit_text("🎊")
     time.sleep(0.2)
