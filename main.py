@@ -40,6 +40,10 @@ PHOTO = [
     "https://telegra.ph/file/fa84c7ef0e928559306db.png",
     "https://telegra.ph/file/72b6383dec320606c324d.png",
     "https://telegra.ph/file/41114c423770f85a9999a.jpg",
+    "https://telegra.ph/file/2100ba0c540895c02b677.png",
+    "https://telegra.ph/file/52e30d9bab966f5a3b434.png",
+    "https://telegra.ph/file/c5a535e0431604b3e2d7d.png",
+    "https://telegra.ph/file/52a3e2d489fd2f08eb8b9.png",
 ]
 
 STICKER = [
@@ -55,7 +59,7 @@ STICKER = [
 
 DEV_OP = [
     [
-        InlineKeyboardButton(text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", url=f"https://t.me/Devarora0981"),
+        InlineKeyboardButton(text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", url=f"https://t.me/Dev_arora_0981"),
         InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/we_rfriends"),
     ],
     [
