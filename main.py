@@ -52,12 +52,7 @@ EMOJIOS = [
       "🪄",
       "🧨",
       "⚡",
-      "⚡",
       "❄️",
-      "☀️",
-      "🍭",
-      "🎲",
-      "🍡",
 ]
       
 STICKER = [
@@ -90,7 +85,7 @@ async def restart(client, m: Message):
     accha = await m.reply_text(
                 text = random.choice(EMOJIOS),
     )
-    await asyncio.sleep(1.5)
+    await asyncio.sleep(1.75)
     await accha.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ..**")
     await asyncio.sleep(0.75)
     await accha.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ.....**")
