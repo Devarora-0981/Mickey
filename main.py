@@ -46,6 +46,15 @@ PHOTO = [
     "https://telegra.ph/file/52a3e2d489fd2f08eb8b9.png",
 ]
 
+EMOJIOS = [ 
+      "💣",
+      "💥",
+      "🪄",
+      "🧨",
+      "⚡",
+      "⚡",
+]
+      
 STICKER = [
       "CAACAgUAAxkBAAJGIGMJFt2-r9xOLr7lL1L7am-q5jBJAAIcAwACRkjxVjVvKkhzlK7LKQQ",
       "CAACAgUAAxkBAAJGI2MJFvltQN6C2jCVL3ODVMUDLu5wAALSAgAC2QQpV9rletyODm9RKQQ",
@@ -73,14 +82,16 @@ DEV_OP = [
 @bot.on_message(filters.command(["start", "aistart"]))
 async def restart(client, m: Message):
     await m.delete()
-    accha = await m.reply("⚡")
-    await asyncio.sleep(2)
+    accha = await m.reply_emoji(
+                emoji = random.choice(EMOJIOS),
+    )
+    await asyncio.sleep(1.5)
     await accha.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ..**")
     await asyncio.sleep(0.75)
     await accha.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ.....**")
     await asyncio.sleep(0.75)
     await accha.edit("**ᴘʀᴇᴘᴀʀɪɴɢ ᴀ ʙᴇᴀᴜᴛɪғᴜʟ sᴛᴀʀᴛ!!**")
-    await asyncio.sleep(2)
+    await asyncio.sleep(1.5)
     await accha.edit("**ʟᴇᴛ's ɢᴏ ... 1**") 
     await asyncio.sleep(0.75)
     await accha.edit("**ʟᴇᴛ's ɢᴏ ... 2**")
@@ -89,7 +100,7 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.75)
     await accha.edit("**ᴀɴᴅ ғɪɴᴀʟʟʏ...**")
     await accha.delete(1)
-    await asyncio.sleep(1)
+    await asyncio.sleep(0.5)
     await m.reply_photo(
         photo = random.choice(PHOTO),
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ**\n**ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ**\n/chatbot [on/off]""",
