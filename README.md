@@ -9,12 +9,12 @@ The easiest way to deploy this Bot
  
 ### Reach Me
 
-<p align="center"><a href="https://t.me/vickmachinebot"> <img src="https://img.shields.io/badge/Telegram%20Bot-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://t.me/Spodormon_Bot"> <img src="https://img.shields.io/badge/Telegram%20Bot-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
 
 ### Support 
 
-<p align="center"><a href="https://t.me/metavoidsupport"> <img src="https://img.shields.io/badge/Meta%20Void%20Support-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://t.me/we_rfriends"> <img src="https://img.shields.io/badge/SPODO%2RMON%20SUPPORT-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
 
-<p align="center"><a href="https://t.me/metavoid"> <img src="https://img.shields.io/badge/Meta%20Void%20Channel-blue?style=for-the-badge" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://t.me/DEVBOTZ"> <img src="https://img.shields.io/badge/DEV%20BOTZ-blue?style=for-the-badge" width="220" height="38.45"/></a></p>
 
-## © Copyright - MetaVoid (Moezilla)
+## © Copyright - DEV 
