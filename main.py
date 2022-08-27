@@ -82,8 +82,8 @@ DEV_OP = [
 @bot.on_message(filters.command(["start", "aistart"]))
 async def restart(client, m: Message):
     await m.delete()
-    accha = await m.reply_emoji(
-                emoji = random.choice(EMOJIOS),
+    accha = await m.reply_text(
+                text = random.choice(EMOJIOS),
     )
     await asyncio.sleep(1.5)
     await accha.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ..**")
