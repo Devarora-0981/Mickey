@@ -68,14 +68,17 @@ STICKER = [
 
 DEV_OP = [
     [
-        InlineKeyboardButton(text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", url=f"https://t.me/Dev_arora_0981"),
-        InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/we_rfriends"),
+        InlineKeyboardButton(text="🥀ᴅᴇᴠᴇʟᴏᴘᴇʀ🥀", url=f"https://t.me/Dev_arora_0981"),
+        InlineKeyboardButton(text="✨ꜱᴜᴘᴘᴏʀᴛ✨", url=f"https://t.me/we_rfriends"),
     ],
     [
         InlineKeyboardButton(
-            text="ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
+            text="☁️ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ☁️",
             url=f"https://t.me/spodormon_bot?startgroup=true",
         ),
+    ],
+    [
+        InlineKeyboardButton(text="❄️sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ❄️", url=f"https://github.com/Devarora0981/Demv-Vimk"),
     ],
 ]
 
