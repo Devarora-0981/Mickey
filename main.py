@@ -116,7 +116,7 @@ async def restart(client, m: Message):
     )
 @bot.on_message(filters.command(["help", "chelp"]))
 async def restart(client, message):
-    hmm = await message.reply_text("**ᴜsᴀɢᴇ ☟︎︎︎**\n**ᴜsᴇ `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n\n**©️ @Dev_Arora_0981 |/n  @DevArora0981**")
+    hmm = await message.reply_text("**ᴜsᴀɢᴇ ☟︎︎︎**\n**ᴜsᴇ** `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n\n**©️ @Dev_Arora_0981**")
 
 @bot.on_message(
     filters.command("chatbot off", prefixes=["/", ".", "?", "-"])
@@ -138,7 +138,7 @@ async def chatbotofd(client, message):
         vick.insert_one({"chat_id": message.chat.id})
         await message.reply_text(f"Chatbot Disabled!")
     if is_vick:
-        await message.reply_text(f"ChatBot Is Already Disabled")
+        await message.reply_text(f"ChatBot Already Disabled")
     
 
 @bot.on_message(
@@ -158,10 +158,10 @@ async def chatboton(client, message):
             )
     is_vick = vick.find_one({"chat_id": message.chat.id})
     if not is_vick:           
-        await message.reply_text(f"Chatbot Is Already Enabled")
+        await message.reply_text(f"Chatbot Already Enabled")
     if is_vick:
         vick.delete_one({"chat_id": message.chat.id})
-        await message.reply_text(f"ChatBot Is Enable!")
+        await message.reply_text(f"ChatBot Enabled!")
     
 
 @bot.on_message(
