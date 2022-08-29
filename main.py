@@ -115,7 +115,7 @@ async def restart(client, m: Message):
     )
 @bot.on_message(filters.command(["help", "chelp"]))
 async def restart(client, message):
-    hmm = await message.reply_text(**ᴜsᴀɢᴇ**\n**ᴜsᴇ `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**)
+    hmm = await message.reply_text("**ᴜsᴀɢᴇ**\n**ᴜsᴇ `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**")
 
 @bot.on_message(
     filters.command("chatbot off", prefixes=["/", ".", "?", "-"])
