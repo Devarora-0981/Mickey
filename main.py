@@ -73,12 +73,15 @@ DEV_OP = [
     ],
     [
         InlineKeyboardButton(
-            text="☁️ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☁️",
+            text=" ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ",
             url=f"https://t.me/spodormon_bot?startgroup=true",
         ),
     ],
     [
         InlineKeyboardButton(text="❄️ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ❄️", url=f"https://github.com/Devarora0981/Demv-Vimk"),
+    ],
+    [
+        InlineKeyboardButton(text="☁️ ᴜᴘᴅᴀᴛᴇs ☁️", url=f"https://t.me/devbotz"),
     ],
 ]
 
@@ -110,12 +113,12 @@ async def restart(client, m: Message):
     await umm.delete()
     await m.reply_photo(
         photo = random.choice(PHOTO),
-        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ**\n**ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ**\n**ᴜsᴀɢᴇ** /chatbot [on/off]\n\n**ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
+        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ [sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ](t.me/Spodormon_bot)**\n\n**ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n\n**ᴜsᴀɢᴇ** /chatbot [on/off]\n\n**ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
         reply_markup=InlineKeyboardMarkup(DEV_OP),
     )
 @bot.on_message(filters.command(["help", "chelp"]))
 async def restart(client, message):
-    hmm = await message.reply_text("**ᴜsᴀɢᴇ**\n**ᴜsᴇ `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**")
+    hmm = await message.reply_text("**ᴜsᴀɢᴇ ☟︎︎︎**\n**ᴜsᴇ `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n\n**©️ @Dev_Arora_0981 | @DevArora0981**")
 
 @bot.on_message(
     filters.command("chatbot off", prefixes=["/", ".", "?", "-"])
@@ -167,7 +170,7 @@ async def chatboton(client, message):
     filters.command("chatbot", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
-    await message.reply_text(f"**Usage:**\n/chatbot [on|off] only group")
+    await message.reply_text(f"**Usage:**\n/chatbot [on/off] only in group")
 
 
 @bot.on_message(
