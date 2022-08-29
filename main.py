@@ -44,6 +44,8 @@ PHOTO = [
     "https://telegra.ph/file/52e30d9bab966f5a3b434.png",
     "https://telegra.ph/file/c5a535e0431604b3e2d7d.png",
     "https://telegra.ph/file/52a3e2d489fd2f08eb8b9.png",
+    "https://telegra.ph/file/99feee933000e8a497ddf.png",
+    "https://telegra.ph/file/17ab4c1b7a5c56f815885.png",
 ]
 
 EMOJIOS = [ 
@@ -64,6 +66,12 @@ STICKER = [
       "CAACAgUAAxkBAAJGL2MJF1x2q6QWheiNhNetHDWAaDp4AAJfAgACbOY5VtusF7q1pF61KQQ",
       "CAACAgUAAxkBAAJGSWMJGPFgN4bdXXhEdHcGObsm7LYdAALzAgACkxExVofbsFCERvUMKQQ",
       "CAACAgUAAxkBAAJGOWMJF-9bNEnqk8DPhMpXXWnWcTfMAAKAAgACO9LBVwTgfA-O-iEVKQQ",
+      "CAACAgUAAxkBAAItc2MM7J1bWHIKubGyaT_udoFNN3oNAAICAgAClr1BV-C7cOD8Rrd5KQQ",
+      "CAACAgUAAxkBAAItcmMM7J06A05BzFni6_u4eNH_ii69AAL-BAAC6wFBV1XSXHLHEFQ-KQQ",
+      "CAACAgUAAxkBAAItcWMM7J1whtCHde9R80D85QpdVz9TAAKmAQACCLBAVwF80M4P2Vh4KQQ",
+      "CAACAgUAAxkBAAItcGMM7J3Bswo-TALmzRZzC7rgWGNoAAKUAgAChzhAV2spD_QEnotmKQQ",
+      "CAACAgUAAxkBAAItb2MM7J2GN5wJSuBEiWo7oGxd0SmOAAIBAgACwqRAVyMW6dYJ-_xSKQQ",
+      "CAACAgUAAxkDAAItdmMM7M9481z7RBw6fFPxlLOR7HQ8AAIICAACruVoVNbi3F6HQlOEKQQ",
 ]
 
 DEV_OP = [
