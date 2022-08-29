@@ -88,13 +88,13 @@ async def restart(client, m: Message):
     accha = await m.reply_text(
                 text = random.choice(EMOJIOS),
     )
-    await asyncio.sleep(1.75)
+    await asyncio.sleep(1.65)
     await accha.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ..**")
     await asyncio.sleep(0.75)
     await accha.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ.....**")
     await asyncio.sleep(0.75)
     await accha.edit("**ᴘʀᴇᴘᴀʀɪɴɢ ᴀ ʙᴇᴀᴜᴛɪғᴜʟ sᴛᴀʀᴛ!!**")
-    await asyncio.sleep(1.5)
+    await asyncio.sleep(1.25)
     await accha.edit("**ʟᴇᴛ's ɢᴏ ... 1**") 
     await asyncio.sleep(0.75)
     await accha.edit("**ʟᴇᴛ's ɢᴏ ... 2**")
@@ -104,13 +104,11 @@ async def restart(client, m: Message):
     await accha.edit("**ᴀɴᴅ ғɪɴᴀʟʟʏ...**")
     await asyncio.sleep(0.5)
     await accha.delete()
-    await asyncio.sleep(0.5)
     umm = await m.reply_sticker(
               sticker = random.choice(STICKER),
     )
     await asyncio.sleep(3)
     await umm.delete()
-    await asyncio.sleep(0.5)
     await m.reply_photo(
         photo = random.choice(PHOTO),
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ**\n**ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ**\n/chatbot [on/off]""",
