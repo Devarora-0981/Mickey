@@ -119,12 +119,12 @@ async def restart(client, m: Message):
     await umm.delete()
     await m.reply_photo(
         photo = random.choice(PHOTO),
-        caption=f"""**ʜᴇʏ, ɪ ᴀᴍ [sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ](t.me/Spodormon_bot)**\n**ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n\n**ᴜsᴀɢᴇ /chatbot [on/off]**\n\n**ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
+        caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ](t.me/Spodormon_bot)**\n**➻ ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n\n**➻ ᴜsᴀɢᴇ /chatbot [on/off]**\n\n**๏ ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
         reply_markup=InlineKeyboardMarkup(DEV_OP),
     )
-@bot.on_message(filters.command(["help", "chelp"]))
+@bot.on_message(filters.command(["help", "chelp", "aihelp"]))
 async def restart(client, message):
-    hmm = await message.reply_text("**ᴜsᴀɢᴇ ☟︎︎︎**\n**ᴜsᴇ** `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n\n**©️ @Dev_Arora_0981**")
+    hmm = await message.reply_text("**ᴜsᴀɢᴇ ☟︎︎︎**\n**➻ ᴜsᴇ** `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ɴᴏᴛᴇ » ʙᴏᴛʜ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n\n**©️ @Dev_Arora_0981**")
 
 @bot.on_message(
     filters.command("chatbot off", prefixes=["/", ".", "?", "-"])
