@@ -18,6 +18,10 @@
             "required": true
         }
     },
+        "GET_ME": {
+            "description": "telegram bot username here without @",
+            "required": true
+        },
     "addons": [
         {
             "plan": "heroku-postgresql"
