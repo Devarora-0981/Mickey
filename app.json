@@ -18,7 +18,7 @@
             "required": true
         }
     },
-        "GET_ME": {
+        "BOT_USERNAME": {
             "description": "telegram bot username here without @",
             "required": true
         },
