@@ -157,7 +157,7 @@ async def chatbotofd(client, message):
     
 
 @bot.on_message(
-    filters.command(["chatbot on", "chatbot@{GET_ME} on"] prefixes=["/", ".", "?", "-"])
+    filters.command(["chatbot on", "chatbot@{GET_ME} on"] ,prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatboton(client, message):
     vickdb = MongoClient(MONGO_URL)    
