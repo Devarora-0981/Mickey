@@ -98,7 +98,7 @@ DEV_OP = [
     ],
 ]
 
-@bot.on_message(filters.command(["start", "aistart"]))
+@bot.on_message(filters.command(["start", "aistart", "start@SPODORMON_BOT", "aistart@SPODORMON_BOT"]))
 async def restart(client, m: Message):
     accha = await m.reply_text(
                 text = random.choice(EMOJIOS),
@@ -129,12 +129,12 @@ async def restart(client, m: Message):
         caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ](t.me/Spodormon_bot)**\n**➻ ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [on/off]**\n**๏ ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
         reply_markup=InlineKeyboardMarkup(DEV_OP),
     )
-@bot.on_message(filters.command(["help", "chelp", "aihelp"]))
+@bot.on_message(filters.command(["help", "help@SPODORMON_BOT", "aihelp", "aihelp@SPODORMON_BOT"], prefixes=["+", ".", "/", "-", "?", "$"]))
 async def restart(client, message):
     hmm = await message.reply_text("**ᴜsᴀɢᴇ ☟︎︎︎**\n**➻ ᴜsᴇ** `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ɴᴏᴛᴇ » ʙᴏᴛʜ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n\n**©️ @Dev_Arora_0981**")
 
 @bot.on_message(
-    filters.command("chatbot off", prefixes=["/", ".", "?", "-"])
+    filters.command(["chatbot off", "chatbot@SPODORMON_BOT off"], prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbotofd(client, message):
     vickdb = MongoClient(MONGO_URL)    
@@ -155,9 +155,9 @@ async def chatbotofd(client, message):
     if is_vick:
         await message.reply_text(f"ChatBot Already Disabled")
     
-GET_ME == BOT_USERNANE
+
 @bot.on_message(
-    filters.command(["chatbot on", "chatbot@{GET_ME} on"] ,prefixes=["/", ".", "?", "-"])
+    filters.command(["chatbot on", "chatbot@SPODORMON_BOT on"] ,prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatboton(client, message):
     vickdb = MongoClient(MONGO_URL)    
@@ -180,7 +180,7 @@ async def chatboton(client, message):
     
 
 @bot.on_message(
-    filters.command("chatbot", prefixes=["/", ".", "?", "-"])
+    filters.command(["chatbot", "chatbot@SPODORMON_BOT"], prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
     await message.reply_text(f"**Usage:**\n/chatbot [on/off] only in group")
