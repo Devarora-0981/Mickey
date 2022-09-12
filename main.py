@@ -14,7 +14,7 @@ API_ID = os.environ.get("API_ID", None)
 API_HASH = os.environ.get("API_HASH", None) 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None) 
 MONGO_URL = os.environ.get("MONGO_URL", None)
-GET_ME = os.environ.get("GET_ME", None) 
+BOT_USERNAME = os.environ.get("BOT_USERNAME", None) 
 
 
 bot = Client(
@@ -155,10 +155,7 @@ async def chatbotofd(client, message):
     if is_vick:
         await message.reply_text(f"ChatBot Already Disabled")
     
-async restart (client):
-               client.GET_ME()
-
-
+GET_ME == BOT_USERNANE
 @bot.on_message(
     filters.command(["chatbot on", "chatbot@{GET_ME} on"] ,prefixes=["/", ".", "?", "-"])
     & ~filters.private)
