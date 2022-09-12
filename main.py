@@ -155,6 +155,9 @@ async def chatbotofd(client, message):
     if is_vick:
         await message.reply_text(f"ChatBot Already Disabled")
     
+async def main():
+    await client.start()
+          client.get_me()
 
 @bot.on_message(
     filters.command(["chatbot on", "chatbot@{GET_ME} on"] ,prefixes=["/", ".", "?", "-"])
