@@ -9,6 +9,10 @@
             "description": "mongo db url here",
             "required": true
         },
+        "BOT_USERNAME": {
+            "description": "telegram bot username here without @",
+            "required": true
+        },
         "API_ID": {
             "description": "telegram api id here",
             "required": true
@@ -18,10 +22,6 @@
             "required": true
         }
     },
-        "BOT_USERNAME": {
-            "description": "telegram bot username here without @",
-            "required": true
-        },
     "addons": [
         {
             "plan": "heroku-postgresql"
