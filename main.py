@@ -15,7 +15,9 @@ API_HASH = os.environ.get("API_HASH", None)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None) 
 MONGO_URL = os.environ.get("MONGO_URL", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME") 
-
+UPDATE_CHNL = os.environ.get("UPDATE_CHNL")
+OWNER_USERNAME = os.environ.get("OWNER_USERNAME")
+SUPPORT_GRP = os.environ.get("SUPPORT_GRP")
 
 bot = Client(
     "VickBot" ,
@@ -32,6 +34,8 @@ async def is_admins(chat_id: int):
             chat_id, filter="administrators"
         )
     ]
+
+#Edit PHOTO, EMOJIOS, And STICKER Below!! 
 
 PHOTO = [
     "https://telegra.ph/file/3abb496a639e4911be956.jpg",
@@ -83,8 +87,8 @@ STICKER = [
 
 DEV_OP = [
     [
-        InlineKeyboardButton(text="🥀 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🥀", url=f"https://t.me/Dev_arora_0981"),
-        InlineKeyboardButton(text="✨ ꜱᴜᴘᴘᴏʀᴛ ✨", url=f"https://t.me/we_rfriends"),
+        InlineKeyboardButton(text="🥀 ᴅᴇᴠᴇʟᴏᴘᴇʀ 🥀", url=f"https://t.me/{OWNER_USERNAME}"),
+        InlineKeyboardButton(text="✨ ꜱᴜᴘᴘᴏʀᴛ ✨", url=f"https://t.me/{SUPPORT_GRP}"),
     ],
     [
         InlineKeyboardButton(
@@ -94,7 +98,7 @@ DEV_OP = [
     ],
     [
         InlineKeyboardButton(text="❄️ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ❄️", url=f"https://github.com/Devarora0981/Demv-Vimk"),
-        InlineKeyboardButton(text="☁️ ᴜᴘᴅᴀᴛᴇs ☁️", url=f"https://t.me/devbotz"),
+        InlineKeyboardButton(text="☁️ ᴜᴘᴅᴀᴛᴇs ☁️", url=f"https://t.me/{UPDATE_CHNL}"),
     ],
 ]
 
@@ -183,7 +187,7 @@ async def chatboton(client, message):
     filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"], prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
-    await message.reply_text(f"**Usage:**\n/chatbot [on/off] only in group")
+    await message.reply_text(f"**ᴜsᴀɢᴇ:**\n/**chatbot [on/off]**\n**ᴄʜᴀᴛ-ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅ(s) ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!")
 
 
 @bot.on_message(
