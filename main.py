@@ -14,7 +14,7 @@ API_ID = os.environ.get("API_ID", None)
 API_HASH = os.environ.get("API_HASH", None) 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None) 
 MONGO_URL = os.environ.get("MONGO_URL", None)
-BOT_USERNAME = os.environ.get("BOT_USERNAME", None) 
+BOT_USERNAME = os.environ.get("BOT_USERNAME") 
 
 
 bot = Client(
@@ -89,7 +89,7 @@ DEV_OP = [
     [
         InlineKeyboardButton(
             text=" ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ",
-            url=f"https://t.me/spodormon_bot?startgroup=true",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         ),
     ],
     [
@@ -98,7 +98,7 @@ DEV_OP = [
     ],
 ]
 
-@bot.on_message(filters.command(["start", "aistart", "start@SPODORMON_BOT", "aistart@SPODORMON_BOT"]))
+@bot.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
 async def restart(client, m: Message):
     accha = await m.reply_text(
                 text = random.choice(EMOJIOS),
@@ -129,7 +129,7 @@ async def restart(client, m: Message):
         caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ](t.me/Spodormon_bot)**\n**➻ ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [on/off]**\n**๏ ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
         reply_markup=InlineKeyboardMarkup(DEV_OP),
     )
-@bot.on_message(filters.command(["help", "help@SPODORMON_BOT", "aihelp", "aihelp@SPODORMON_BOT"], prefixes=["+", ".", "/", "-", "?", "$"]))
+@bot.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
 async def restart(client, message):
     hmm = await message.reply_text("**ᴜsᴀɢᴇ ☟︎︎︎**\n**➻ ᴜsᴇ** `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ɴᴏᴛᴇ » ʙᴏᴛʜ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n\n**©️ @Dev_Arora_0981**")
 
@@ -157,7 +157,7 @@ async def chatbotofd(client, message):
     
 
 @bot.on_message(
-    filters.command(["chatbot on", "chatbot@SPODORMON_BOT on"] ,prefixes=["/", ".", "?", "-"])
+    filters.command(["chatbot on", f"chatbot@{BOT_USERNAME} on"] ,prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatboton(client, message):
     vickdb = MongoClient(MONGO_URL)    
@@ -180,7 +180,7 @@ async def chatboton(client, message):
     
 
 @bot.on_message(
-    filters.command(["chatbot", "chatbot@SPODORMON_BOT"], prefixes=["/", ".", "?", "-"])
+    filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"], prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
     await message.reply_text(f"**Usage:**\n/chatbot [on/off] only in group")
