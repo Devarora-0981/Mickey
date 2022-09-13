@@ -13,6 +13,18 @@
             "description": "telegram bot username here without @",
             "required": true
         },
+        "OWNER_USERNAME": {
+            "description": "Owner Username without @",
+            "required": true
+        },
+        "UPDATE_CHNL": {
+            "description": "Your Updates Channel without @",
+            "required": true
+        },
+        "SUPPORT_GRP": {
+            "description": "Your Support Group without @",
+            "required": true
+        },
         "API_ID": {
             "description": "telegram api id here",
             "required": true
