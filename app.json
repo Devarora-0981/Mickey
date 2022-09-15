@@ -17,6 +17,10 @@
             "description": "Owner Username without @",
             "required": true
         },
+        "BOT_NAME": {
+            "description": "Simple Bot-name. Do not use Modified Text..",
+            "required": true
+        },
         "UPDATE_CHNL": {
             "description": "Your Updates Channel without @",
             "required": true
