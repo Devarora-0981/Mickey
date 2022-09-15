@@ -123,11 +123,11 @@ async def restart(client, m: Message):
     )
     await asyncio.sleep(1)
     await accha.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ..**")
-    await asyncio.sleep(0.25)
+    await asyncio.sleep(0.2)
     await asyncio.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ.....**")
-    await asyncio.sleep(0.25)
+    await asyncio.sleep(0.2)
     await asyncio.edit("**ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ sᴛᴀʀᴛɪɴɢ..**")
-    await asyncio.sleep(0.15)
+    await asyncio.sleep(0.1)
     await accha.delete()
     umm = await m.reply_sticker(
               sticker = random.choice(STICKER),
