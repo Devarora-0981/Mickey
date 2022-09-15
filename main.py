@@ -132,7 +132,7 @@ async def restart(client, m: Message):
     umm = await m.reply_sticker(
               sticker = random.choice(STICKER),
     )
-    await asyncio.sleep(3)
+    await asyncio.sleep(2)
     await umm.delete()
     await m.reply_photo(
         photo = random.choice(PHOTO),
