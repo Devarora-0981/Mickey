@@ -18,6 +18,18 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME")
 UPDATE_CHNL = os.environ.get("UPDATE_CHNL")
 OWNER_USERNAME = os.environ.get("OWNER_USERNAME")
 SUPPORT_GRP = os.environ.get("SUPPORT_GRP")
+BOT_NAME = os.environ.get("BOT_NAME")
+START_IMG1 = os.environ.get("START_IMG1")
+START_IMG2 = os.environ.get("START_IMG2", None)
+START_IMG3 = os.environ.get("START_IMG3", None)
+START_IMG4 = os.environ.get("START_IMG4", None)
+START_IMG5 = os.environ.get("START_IMG5", None)
+START_IMG6 = os.environ.get("START_IMG6", None)
+START_IMG7 = os.environ.get("START_IMG7", None)
+START_IMG8 = os.environ.get("START_IMG8", None)
+START_IMG9 = os.environ.get("START_IMG9", None)
+START_IMG10 = os.environ.get("START_IMG10", None)
+
 
 bot = Client(
     "VickBot" ,
@@ -38,19 +50,16 @@ async def is_admins(chat_id: int):
 #Edit PHOTO, EMOJIOS, And STICKER Below!! 
 
 PHOTO = [
-    "https://telegra.ph/file/3abb496a639e4911be956.jpg",
-    "https://telegra.ph/file/bf6a3b64608eff21a9f74.jpg",
-    "https://telegra.ph/file/50ee047a8725d2bfc6e95.jpg",
-    "https://telegra.ph/file/47f1f43fc3f270d64ee2f.jpg",
-    "https://telegra.ph/file/fa84c7ef0e928559306db.png",
-    "https://telegra.ph/file/72b6383dec320606c324d.png",
-    "https://telegra.ph/file/41114c423770f85a9999a.jpg",
-    "https://telegra.ph/file/2100ba0c540895c02b677.png",
-    "https://telegra.ph/file/52e30d9bab966f5a3b434.png",
-    "https://telegra.ph/file/c5a535e0431604b3e2d7d.png",
-    "https://telegra.ph/file/52a3e2d489fd2f08eb8b9.png",
-    "https://telegra.ph/file/99feee933000e8a497ddf.png",
-    "https://telegra.ph/file/17ab4c1b7a5c56f815885.png",
+    START_IMG1,
+    START_IMG2,
+    START_IMG3,
+    START_IMG4,
+    START_IMG5,
+    START_IMG6,
+    START_IMG7,
+    START_IMG8,
+    START_IMG9,
+    START_IMG10,
 ]
 
 EMOJIOS = [ 
@@ -130,7 +139,7 @@ async def restart(client, m: Message):
     await umm.delete()
     await m.reply_photo(
         photo = random.choice(PHOTO),
-        caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [sᴘᴏᴅᴇʀᴍᴏɴ ʙᴏᴛ](t.me/Spodormon_bot)**\n**➻ ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [on/off]**\n**๏ ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
+        caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](t.me/{BOT_USERNAME})**\n**➻ ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [on/off]**\n**๏ ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
         reply_markup=InlineKeyboardMarkup(DEV_OP),
     )
 @bot.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
