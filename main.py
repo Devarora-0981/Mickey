@@ -143,6 +143,16 @@ async def restart(client, m: Message):
 async def restart(client, message):
     hmm = await message.reply_text("**ᴜsᴀɢᴇ ☟︎︎︎**\n**➻ ᴜsᴇ** `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ɴᴏᴛᴇ » ʙᴏᴛʜ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n\n**©️ @Dev_Arora_0981**")
 
+@bot.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
+async def ping(client, message: Message):
+        start = datetime.now()
+        t = "Pinging..."
+        txxt = await message.reply(t)
+        await asyncio.sleep(2)
+        end = datetime.now()
+        ms = (end-start).microseconds / 1000
+        await txxt.edit_text(f"ʏᴇᴀʜ ʙᴀʙʏ!\n**{BOT_NAME}** ɪs ᴀʟɪᴠᴇ 🥀\n\nᴘɪɴɢ-ᴘᴏɴɢ 🏓\n   ➥ {ms} ms\n ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ [ᴅᴇᴠ🎋](t.me/Dev_Arora_0981)")
+
 @bot.on_message(
     filters.command(["chatbot off", f"chatbot@{BOT_USERNAME} off"], prefixes=["/", ".", "?", "-"])
     & ~filters.private)
