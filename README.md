@@ -1,4 +1,4 @@
-<h5>About!</h5>
+<pre><h5>About!</h5></pre>
 <pre><b>An Advanced Telegram Chatbot Open Sorce Code.</b></pre>
 
 <details>
@@ -24,9 +24,9 @@
 
 <p align="center"><a href="https://t.me/DEVBOTZ"> <img src="https://img.shields.io/badge/DEV%20BOTZ-blue?style=for-the-badge" width="220" height="38.45"/></a></p>
 <details>
-<summary>© Copyright ©️</summary> 
+<summary><h4>© Copyright </h4></summary> 
 <pre><i>I Don't Own The Copyright</i></pre>
 </details>
 
-©️ Copyright ©️
+<i>Copyright</i>
 Owned By [Moezilla](https://t.me/metavoidsupport)
