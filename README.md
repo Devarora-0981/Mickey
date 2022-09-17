@@ -8,7 +8,7 @@
 <details>
 <summary><h4>⚔️ Deployment ⚔️</h4></summary>
 <pre><i>Enter The Required Vars In The Heroku.</i></pre>
-<i>😈 DEPLOY TO HEROKU 😈</i>
+<pre><i>😈 DEPLOY TO HEROKU 😈</i></pre>
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Devarora0981/Demv-Vimk"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 </details>
 <details>
