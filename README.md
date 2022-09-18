@@ -1,7 +1,5 @@
-<details>
-<summary><h4>About!</h4></summary>
+<h4>About!</h4>
 <pre><b>An Advanced Telegram Chatbot Open Sorce Code.</b></pre>
-</details>
 <details>
 <summary><h3>Note 📝</h3></summary> 
 <pre><i>VickMachineBot Is Not My Bot</i></pre>
