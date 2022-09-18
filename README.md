@@ -32,4 +32,5 @@
 </details>
 
 <p align="centre"><i>Copyright</i></p>
+
 Owned By [Moezilla](https://t.me/metavoidsupport)
