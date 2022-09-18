@@ -15,9 +15,9 @@
 <details>
 <summary>•SAMPLE BOT•</summary>
 <i> All The Customisations Like Different Start Images And Different Stickers Are Available. Just Check The Vars.</i>
+<p align="center"><a href="https://t.me/mickeymouse_robot"> <img src="https://img.shields.io/badge/Sample%20Bot-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
 </details>
 
-<p align="center"><a href="https://t.me/Spodormon_Bot"> <img src="https://img.shields.io/badge/Sample%20Bot-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
 
 ### Support 
 
