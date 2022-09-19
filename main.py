@@ -152,7 +152,7 @@ async def ping(client, message: Message):
         await asyncio.sleep(2)
         end = datetime.now()
         ms = (end-start).microseconds / 1000
-        await txxt.edit_text(f"ʏᴇᴀʜ ʙᴀʙʏ!\n**{BOT_NAME}** ɪs ᴀʟɪᴠᴇ 🥀\n\nᴘɪɴɢ-ᴘᴏɴɢ 🏓\n   ➥ {ms} ms\n ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ [ᴅᴇᴠ🎋](t.me/Dev_Arora_0981)")
+        await txxt.edit_text(f"ʏᴇᴀʜ ʙᴀʙʏ!\n**{BOT_NAME}** ɪs ᴀʟɪᴠᴇ 🥀\n\nᴘɪɴɢ-ᴘᴏɴɢ 🏓\n   ➥ {ms} ms\n ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ ᴅᴇᴠ🎋")
 
 @bot.on_message(
     filters.command(["chatbot off", f"chatbot@{BOT_USERNAME} off"], prefixes=["/", ".", "?", "-"])
