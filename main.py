@@ -159,7 +159,7 @@ async def ping(client, message: Message):
         await message.reply_photo(
                              photo=random.choice(PHOTO),
                              caption=f"уєαн вαву!\n**{BOT_NAME}** ιѕ αℓινє 🥀\n\nριиg-ρσиg 🏓\n   ➥ {ms} ms\n мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋",
-                             reply_markup=InlineKeyboardButton(text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸", url="https://t.me/{BOT_USERNAME}?startgroup=true"),
+                             reply_markup=InlineKeyboardMarkup([InlineKeyboardButton(text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸", url="https://t.me/{BOT_USERNAME}?startgroup=true")]),
        )
        
 
