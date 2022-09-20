@@ -147,9 +147,13 @@ async def restart(client, message):
 @bot.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
 async def ping(client, message: Message):
         start = datetime.now()
-        t = "Pinging..."
+        t = "__ριиgιиg...__"
         txxt = await message.reply(t)
-        await asyncio.sleep(2)
+        await asyncio.sleep(0.35)
+        await txxt.edit_text("__ριиgιиg.....__")
+        await asyncio.sleep(0.35)
+        await txxt.edit_text("__ριиgιиg...__")
+        await asyncio.sleep(0.35)
         end = datetime.now()
         ms = (end-start).microseconds / 1000
         await txxt.edit_text(f"уєαн вαву!\n**{BOT_NAME}** ιѕ αℓινє 🥀\n\nριиg-ρσиg 🏓\n   ➥ {ms} ms\n мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋")
