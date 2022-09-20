@@ -115,6 +115,14 @@ DEV_OP = [
         InlineKeyboardButton(text="☁️ ᴜᴘᴅᴀᴛᴇs ☁️", url=f"https://t.me/{UPDATE_CHNL}"),
     ],
 ]
+PNG_BTN = [
+    [
+         InlineKeyboardButton(
+             text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸",
+             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+         ),
+     ],
+]
 
 @bot.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
 async def restart(client, m: Message):
@@ -159,7 +167,7 @@ async def ping(client, message: Message):
         await message.reply_photo(
                              photo=random.choice(PHOTO),
                              caption=f"уєαн вαву!\n**{BOT_NAME}** ιѕ αℓινє 🥀\n\nριиg-ρσиg 🏓\n   ➥ {ms} ms\n мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋",
-                             reply_markup=InlineKeyboardMarkup([InlineKeyboardButton(text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸", url="https://t.me/{BOT_USERNAME}?startgroup=true")]),
+                             reply_markup=InlineKeyboardMarkup(PNG_BTN),
        )
        
 
