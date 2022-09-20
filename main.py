@@ -156,9 +156,9 @@ async def ping(client, message: Message):
         start = datetime.now()
         t = "__ριиgιиg...__"
         txxt = await message.reply(t)
-        await asyncio.sleep(0.35)
+        await asyncio.sleep(0.25)
         await txxt.edit_text("__ριиgιиg.....__")
-        await asyncio.sleep(0.35)
+        await asyncio.sleep(0.25)
         await txxt.edit_text("__ριиgιиg...__")
         await asyncio.sleep(0.35)
         await txxt.delete()
@@ -166,7 +166,7 @@ async def ping(client, message: Message):
         ms = (end-start).microseconds / 1000
         await message.reply_photo(
                              photo=random.choice(PHOTO),
-                             caption=f"уєαн вαву!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ αℓινє 🥀\nαи∂ ωσякιиg ωιтн α ριиg σf » `{ms}` ms\n\n**мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋**",
+                             caption=f"уєαн вαву!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ αℓινє 🥀\nαи∂ ωσякιиg ωιтн α ριиg σf ➥ `{ms}` ms\n\n**мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋**",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
        )
        
