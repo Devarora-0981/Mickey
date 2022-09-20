@@ -166,7 +166,7 @@ async def ping(client, message: Message):
         ms = (end-start).microseconds / 1000
         await message.reply_photo(
                              photo=random.choice(PHOTO),
-                             caption=f"уєαн вαву!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ αℓινє 🥀\nαи∂ ωσякιиg ωιтн α ριиg σf ➥ `{ms}` ms\n\n**мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋**",
+                             caption=f"нey вαву!! **[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ αℓινє 🥀\nαnd ωσякιиg ωιтн α ριиg σf\n➥ `{ms}` ms\n\n**мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋**",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
        )
        
