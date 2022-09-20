@@ -158,7 +158,7 @@ async def ping(client, message: Message):
         await asyncio.sleep(0.35)
         await txxt.edit_text("__ριиgιиg...__")
         await asyncio.sleep(0.35)
-        await txxt.delwte()
+        await txxt.delete()
         end = datetime.now()
         ms = (end-start).microseconds / 1000
         await message.reply_text(
