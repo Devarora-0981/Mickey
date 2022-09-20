@@ -161,9 +161,10 @@ async def ping(client, message: Message):
         await txxt.delete()
         end = datetime.now()
         ms = (end-start).microseconds / 1000
-        await message.reply_text(
-                             text=f"уєαн вαву!\n**{BOT_NAME}** ιѕ αℓινє 🥀\n\nριиg-ρσиg 🏓\n   ➥ {ms} ms\n мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋",
-                         reply_markup=Inlinekeyboardmarkup(PING_K),
+        await message.reply_photo(
+                             photo=random.choice(PHOTO),
+                             caption=f""""уєαн вαву!\n**{BOT_NAME}** ιѕ αℓινє 🥀\n\nριиg-ρσиg 🏓\n   ➥ {ms} ms\n мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋"""",
+                             reply_markup=Inlinekeyboardmarkup(PING_K),
        )
        
 
