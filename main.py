@@ -152,11 +152,15 @@ async def ping(client, message: Message):
         await asyncio.sleep(0.35)
         await txxt.edit_text("__ριиgιиg.....__")
         await asyncio.sleep(0.35)
-        await txxt.edit_text("🏓")
-        await asyncio.sleep(0.5)
+        await txxt.edit_text("__ριиgιиg...__")
+        await asyncio.sleep(0.35)
+        await txxt.delete()
         end = datetime.now()
         ms = (end-start).microseconds / 1000
-        await txxt.edit_text(f"уєαн вαву!\n**{BOT_NAME}** ιѕ αℓινє 🥀\n\nριиg-ρσиg 🏓\n   ➥ {ms} ms\n мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋")
+        await message.reply_photo(
+                            photo=random.choice(PHOTO),
+                            caption=f"""уєαн вαву!\n**{BOT_NAME}** ιѕ αℓινє 🥀\n\nριиg-ρσиg 🏓\n   ➥ {ms} ms\n мα∂є ωιтн  ❣️ ву ᎠᎬᏉ🎋""",
+                            reply_markup=InlineKeyboardButton(text="αdd мє вαву!!"", url="f"https://t.me/{BOT_USERNAME}?startgroup=true")
 
 @bot.on_message(
     filters.command(["chatbot off", f"chatbot@{BOT_USERNAME} off"], prefixes=["/", ".", "?", "-"])
