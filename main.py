@@ -60,7 +60,8 @@ async def is_admins(chat_id: int):
 PING_K = [
       [
           InlineKeyboardButton(text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸", url="https://t.me/{BOT_USERNAME}?startgroup=true")
-      ]
+      ],
+]
 
 PHOTO = [
     START_IMG1,
