@@ -29,11 +29,11 @@
 <p align="center"><a href="https://t.me/we_rfriends"> <img src="https://img.shields.io/badge/SUPPORT-black?style=for-the-badge" width="220" height="38.45"/></a></p>
 
 <p align="center"><a href="https://t.me/DEVBOTZ"> <img src="https://img.shields.io/badge/DEV%20BOTZ-blue?style=for-the-badge" width="220" height="38.45"/></a></p>
+
+## © Copyright Owned By [Moezilla](https://t.me/metavoidsupport)
+
+
 <details>
-<summary><h4>© Copyright </h4></summary> 
-<pre><i>I Don't Own The Copyright</i></pre>
+<summary><i>A Message For You!</i></summary>
+<p><i>Don't Forget To Give The ⭐</i></p>
 </details>
-
-<p align="centre"><i>Copyright</i></p>
-
-Owned By [Moezilla](https://t.me/metavoidsupport)
