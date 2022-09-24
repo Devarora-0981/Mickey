@@ -1,5 +1,5 @@
 {
-    "name": "VickMachineBot",    
+    "name": "Dev-Vick",    
     "env": {
         "BOT_TOKEN": {
             "description": "telegram bot token here",
@@ -35,39 +35,39 @@
         },
         "STKR1": {
             "description": "Sticker for start ",
-            "required": false
+            "required": true
         },
         "STKR2": {
             "description": "Sticker for start ",
-            "required": false
+            "required": true
         },
         "STKR3": {
             "description": "Sticker for start ",
-            "required": false
+            "required": true
         },
         "STKR4": {
             "description": "Sticker for start ",
-            "required": false
+            "required": true
         },
         "STKR5": {
             "description": "Sticker for start ",
-            "required": false
+            "required": true
         },
         "STKR6": {
             "description": "Sticker for start ",
-            "required": false
+            "required": true
         },
         "STKR7": {
             "description": "Sticker for start ",
-            "required": false
+            "required": true
         },
        "STKR8": {
             "description": "Sticker for start ",
-            "required": false
+            "required": true
         },
         "STKR9": {
             "description": "Sticker for start ",
-            "required": false
+            "required": true
         },
         "START_IMG1": {
             "description": "Start Image For Bot.",
@@ -75,39 +75,39 @@
         },
         "START_IMG2": {
             "description": "Start Image For Bot.",
-            "required": false
+            "required": true
         },
         "START_IMG3": {
             "description": "Start Image For Bot.",
-            "required": false
+            "required": true
         },
         "START_IMG4": {
             "description": "Start Image For Bot.",
-            "required": false
+            "required": true
         },
         "START_IMG5": {
             "description": "Start Image For Bot.",
-            "required": false
+            "required": true
         },
         "START_IMG6": {
             "description": "Start Image For Bot.",
-            "required": false
+            "required": true
         },
         "START_IMG7": {
             "description": "Start Image For Bot.",
-            "required": false
+            "required": true
         },
         "START_IMG8": {
             "description": "Start Image For Bot.",
-            "required": false
+            "required": true
         },
         "START_IMG9": {
             "description": "Start Image For Bot.",
-            "required": false
+            "required": true
         },
         "START_IMG10": {
             "description": "Start Image For Bot.",
-            "required": false
+            "required": true
         },
         "API_ID": {
             "description": "telegram api id here",
