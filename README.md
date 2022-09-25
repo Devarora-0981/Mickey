@@ -32,8 +32,16 @@
 
 ## © Copyright Owned By [Moezilla](https://t.me/metavoidsupport)
 
+## Special Thanks 🙏
+To [Moezilla](t.me/metavoid)
+To [Anonymous](t.me/Anonymous_was_bot)
+To [Abishnoi](t.me/Abishnoi1m)
+TO [Hyper King](t.me/HYPER_AD13)
+
+These All Helped. Thanks To Them 🙏.
+
 
 <details>
 <summary><i>A Message For You!</i></summary>
-<p><i>Don't Forget To Give The ⭐</i></p>
+<p><i>Give The ⭐</i></p>
 </details>
