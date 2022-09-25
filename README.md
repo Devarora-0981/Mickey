@@ -33,12 +33,13 @@
 ## © Copyright Owned By [Moezilla](https://t.me/metavoidsupport)
 
 ## Special Thanks 🙏
-To [Moezilla](t.me/metavoid)
-To [Anonymous](t.me/Anonymous_was_bot)
-To [Abishnoi](t.me/Abishnoi1m)
-TO [Hyper King](t.me/HYPER_AD13)
 
-These All Helped. Thanks To Them 🙏.
+To [Moezilla](https://t.me/metavoid)
+To [Anonymous](https://t.me/Anonymous_was_bot)
+To [Abishnoi](https://t.me/Abishnoi1m)
+TO [Hyper King](https://t.me/HYPER_AD13)
+
+<i>These All Helped Me. Thanks To Them 🙏.</i>
 
 
 <details>
