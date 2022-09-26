@@ -143,7 +143,7 @@ BACK = [
 ]
 ABOUT_BTN = [
       [
-           InlineKeyboardButton(text="✨ sᴜᴘᴘᴏʀᴛ ✨", url=f"https://t.me/{SUPPORT_GRP}"),  
+           InlineKeyboardButton(text="🦄 sᴜᴘᴘᴏʀᴛ 🦄", url=f"https://t.me/{SUPPORT_GRP}"),  
            InlineKeyboardButton(text="🚀 ʜᴇʟᴘ 🚀", callback_data="HELP"),
       ],
       [    
