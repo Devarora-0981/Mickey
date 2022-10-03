@@ -278,10 +278,6 @@ async def ping(client, message: Message):
     filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"])
     & ~filters.private)
 async def chatonoff(client: Client, message: Message):
-    if message.chat.type == "private":
-       seggy = await message.reply_text(
-                     text = "**ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘs ᴏɴʟʏ!!**",
-    )
     if not message.from_user:
         return
     else:
