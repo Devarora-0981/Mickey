@@ -135,7 +135,7 @@ PNG_BTN = [
          ),
      ],
 ]
-HELP_READ = f"**ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ {BOT_NAME}**\n**──────────────────**\n**➻ ᴜsᴇ** `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**๏ ɴᴏᴛᴇ ➻ ʙᴏᴛʜ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ ᴄʜᴀᴛ-ʙᴏᴛ ᴏɴ/ᴏғғ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n**──────────────────**\n**➻ ᴜsᴇ** `/ping` **ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n**➻ ᴜsᴇ** `/repo` **ғᴏʀ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ.**\n**──────────────────**\n**©️ @Dev_Arora_0981**"
+HELP_READ = f"**ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ {BOT_NAME}**\n**──────────────────**\n**➻ ᴜsᴇ /chatbot ᴛᴏ ᴅɪsᴀʙʟᴇ/ᴇɴᴀʙʟᴇ ᴄʜᴀᴛ-ʙᴏᴛ.**\n**๏ ɴᴏᴛᴇ ➻ ʙᴏᴛʜ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ ᴄʜᴀᴛ-ʙᴏᴛ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n**──────────────────**\n**➻ ᴜsᴇ** `/ping` **ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n**➻ ᴜsᴇ** `/repo` **ғᴏʀ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ.**\n**──────────────────**\n**©️ @Dev_Arora_0981**"
 BACK = [
      [
            InlineKeyboardButton(text="✨ ʙᴀᴄᴋ ✨", callback_data="BACK"),
@@ -214,6 +214,33 @@ async def cb_handler(Client, query: CallbackQuery):
                     reply_markup = InlineKeyboardMarkup(ABOUT_BTN),
                     disable_web_page_preview=True,
      )
+    elif query.data == "addchat":
+        if query.from_user.id not in (await is_admins(query.message.chat.id)):
+            return query.answer(
+                "You don't have permissions to do this baby.",
+                show_alert=True,
+            )
+        else:
+            is_vick = vick.find_one({"chat_id": query.message.chat.id})
+            if not is_vick:           
+                await query.edit_message_text(f"**ᴄʜᴀᴛ-ʙᴏᴛ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ.**")
+            if is_vick:
+                vick.delete_one({"chat_id": query.message.chat.id})
+                await query.edit_message_text(f"**ᴄʜᴀᴛ-ʙᴏᴛ ᴇɴᴀʙʟᴇᴅ ʙʏ** {query.from_user.mention}.")
+    elif query.data == "rmchat":
+        if query.from_user.id not in (await is_admins(query.message.chat.id)):
+            return query.answer(
+                "**ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴅᴏ ᴛʜɪs ʙᴀʙʏ♡︎**",
+                show_alert=True,
+            )
+        else:
+            is_vick = vick.find_one({"chat_id": query.message.chat.id})
+            if not is_vick:
+                vick.insert_one({"chat_id": query.message.chat.id})
+                await query.edit_message_text(f"**ᴄʜᴀᴛ-ʙᴏᴛ ᴅɪsᴀʙʟᴇᴅ ʙʏ** {query.from_user.mention}.")
+            if is_vick:
+                await query.edit_message_text("**ᴄʜᴀᴛ-ʙᴏᴛ ᴀʟʀᴇᴀᴅʏ ᴅɪsᴀʙʟᴇᴅ.**")
+
 @bot.on_message(filters.command("repo"))
 async def repo(client, message):
     await message.reply_text(
@@ -246,59 +273,30 @@ async def ping(client, message: Message):
                              caption=f"нey вαву!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n**мαdє ωιтн ❣️ ву [Ꭰev🎋](https://t.me/Dev_Arora_0981)**",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
        )
-
-@bot.on_message(
-    filters.command(["chatbot off", f"chatbot@{BOT_USERNAME} off"], prefixes=["/", ".", "?", "-"])
-    & ~filters.private)
-async def chatbotofd(client, message):
-    vickdb = MongoClient(MONGO_URL)    
-    vick = vickdb["VickDb"]["Vick"]     
-    if message.from_user:
-        user = message.from_user.id
-        chat_id = message.chat.id
-        if user not in (
-           await is_admins(chat_id)
-        ):
-           return await message.reply_text(
-                "You are not admin"
-            )
-    is_vick = vick.find_one({"chat_id": message.chat.id})
-    if not is_vick:
-        vick.insert_one({"chat_id": message.chat.id})
-        await message.reply_text(f"Chatbot Disabled!")
-    if is_vick:
-        await message.reply_text(f"ChatBot Already Disabled")
     
-
 @bot.on_message(
-    filters.command(["chatbot on", f"chatbot@{BOT_USERNAME} on"] ,prefixes=["/", ".", "?", "-"])
+    filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"])
     & ~filters.private)
-async def chatboton(client, message):
-    vickdb = MongoClient(MONGO_URL)    
-    vick = vickdb["VickDb"]["Vick"]     
-    if message.from_user:
+async def chatonoff(client: Client, message: Message):
+    if not message.from_user:
+        return
+    else:
         user = message.from_user.id
         chat_id = message.chat.id
-        if user not in (
-            await is_admins(chat_id)
-        ):
+        if user not in (await is_admins(chat_id)):
             return await message.reply_text(
-                "You are not admin"
+                "**ʏᴏᴜ ᴀʀᴇ'ɴᴛ ᴀɴ ᴀᴅᴍɪɴ.**"
             )
-    is_vick = vick.find_one({"chat_id": message.chat.id})
-    if not is_vick:           
-        await message.reply_text(f"Chatbot Already Enabled")
-    if is_vick:
-        vick.delete_one({"chat_id": message.chat.id})
-        await message.reply_text(f"ChatBot Enabled!")
-    
-
-@bot.on_message(
-    filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"], prefixes=["/", ".", "?", "-"])
-    & ~filters.private)
-async def chatbot(client, message):
-    await message.reply_text(f"**ᴜsᴀɢᴇ:**\n/**chatbot [on/off]**\n**ᴄʜᴀᴛ-ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅ(s) ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!**")
-
+        else:
+            await message.reply_text(
+            text="• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.",
+            reply_markup=InlineKeyboardMarkup(
+        [
+            [InlineKeyboardButton(text="ᴇɴᴀʙʟᴇ", callback_data=f"addchat"),
+             InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ", callback_data=f"rmchat")],
+        ]
+    )
+        )
 
 @bot.on_message(
  (
