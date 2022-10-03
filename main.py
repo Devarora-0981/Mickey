@@ -135,7 +135,7 @@ PNG_BTN = [
          ),
      ],
 ]
-HELP_READ = f"**ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ {BOT_NAME}**\n**──────────────────**\n**➻ ᴜsᴇ /chatbot ᴛᴏ ᴅɪsᴀʙʟᴇ/ᴇɴᴀʙʟᴇ ᴄʜᴀᴛ-ʙᴏᴛ.**\n**๏ ɴᴏᴛᴇ ➻ ʙᴏᴛʜ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ ᴄʜᴀᴛ-ʙᴏᴛ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n**──────────────────**\n**➻ ᴜsᴇ** `/ping` **ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n**➻ ᴜsᴇ** `/repo` **ғᴏʀ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ.**\n**──────────────────**\n**©️ @Dev_Arora_0981**"
+HELP_READ = f"**ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ {BOT_NAME}**\n**──────────────**\n**➻ ᴜsᴇ /chatbot ᴛᴏ ᴅɪsᴀʙʟᴇ/ᴇɴᴀʙʟᴇ ᴄʜᴀᴛ-ʙᴏᴛ.**\n**๏ ɴᴏᴛᴇ ➻ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴍᴍᴀɴᴅ ғᴏʀ ᴄʜᴀᴛ-ʙᴏᴛ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n**──────────────**\n**➻ ᴜsᴇ** `/ping` **ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n**➻ ᴜsᴇ** `/repo` **ғᴏʀ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ.**\n**──────────────────**\n**©️ @Dev_Arora_0981**"
 BACK = [
      [
            InlineKeyboardButton(text="✨ ʙᴀᴄᴋ ✨", callback_data="BACK"),
@@ -278,6 +278,10 @@ async def ping(client, message: Message):
     filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"])
     & ~filters.private)
 async def chatonoff(client: Client, message: Message):
+    if message.chat.type == "private":
+       seggy = await message.reply_text(
+                     text = "**ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘs ᴏɴʟʏ!!**",
+    )
     if not message.from_user:
         return
     else:
