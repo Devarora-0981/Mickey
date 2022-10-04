@@ -100,8 +100,7 @@ START = f"""
 **๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}]({START_IMG1})**
 **➻ ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**
 **─────────────**
-**➻ ᴜsᴀɢᴇ /chatbot **
-**๏ ғᴏʀ ʜᴇʟᴘ ᴜsᴇ /help**
+**ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ.**
 """
 DEV_OP = [
     [
@@ -135,7 +134,7 @@ PNG_BTN = [
          ),
      ],
 ]
-HELP_READ = f"**ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ {BOT_NAME}**\n**──────────────**\n**➻ ᴜsᴇ /chatbot ᴛᴏ ᴅɪsᴀʙʟᴇ/ᴇɴᴀʙʟᴇ ᴄʜᴀᴛ-ʙᴏᴛ.**\n**๏ ɴᴏᴛᴇ ➻ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴍᴍᴀɴᴅ ғᴏʀ ᴄʜᴀᴛ-ʙᴏᴛ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n**──────────────**\n**➻ ᴜsᴇ** `/ping` **ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n**➻ ᴜsᴇ** `/repo` **ғᴏʀ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ.**\n**──────────────────**\n**©️ @Dev_Arora_0981**"
+HELP_READ = f"**ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ {BOT_NAME}**\n**──────────────**\n**➻ ᴜsᴇ /chatbot ᴛᴏ ᴅɪsᴀʙʟᴇ/ᴇɴᴀʙʟᴇ ᴄʜᴀᴛ-ʙᴏᴛ.**\n**๏ ɴᴏᴛᴇ ➻ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴍᴍᴀɴᴅ ғᴏʀ ᴄʜᴀᴛ-ʙᴏᴛ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n**──────────────**\n**➻ ᴜsᴇ** /ping **ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n**➻ ᴜsᴇ** /repo **ғᴏʀ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ.**\n**──────────────────**\n**©️ @Dev_Arora_0981**"
 BACK = [
      [
            InlineKeyboardButton(text="✨ ʙᴀᴄᴋ ✨", callback_data="BACK"),
@@ -165,29 +164,37 @@ ABOUT_READ = f"""
 **──────────────────**
 **➻ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ғᴏʀ ɢᴇᴛᴛɪɴɢ ʙᴀsɪᴄ ʜᴇʟᴩ ᴀɴᴅ ɪɴғᴏ ᴀʙᴏᴜᴛ [{BOT_NAME}](https://t.me/{BOT_USERNAME})**
 """
+
 @bot.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
 async def restart(client, m: Message):
-    accha = await m.reply_text(
-                text = random.choice(EMOJIOS),
-    )
-    await asyncio.sleep(1.3)
-    await accha.edit("__ᴅιиg ᴅσиg ꨄ︎ ѕтαятιиg..__")
-    await asyncio.sleep(0.2)
-    await accha.edit("__ᴅιиg ᴅσиg ꨄ sтαятιиg.....__")
-    await asyncio.sleep(0.2)
-    await accha.edit("__ᴅιиg ᴅσиg ꨄ︎ sтαятιиg..__")
-    await asyncio.sleep(0.2)
-    await accha.delete()
-    umm = await m.reply_sticker(
-              sticker = random.choice(STICKER),
-    )
-    await asyncio.sleep(2)
-    await umm.delete()
-    await m.reply_photo(
-        photo = random.choice(PHOTO),
-        caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](t.me/{BOT_USERNAME})**\n**➻ ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [on/off]**\n**๏ ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
-        reply_markup=InlineKeyboardMarkup(DEV_OP),
-    )
+    if m.chat.type == "private":
+        accha = await m.reply_text(
+            text = random.choice(EMOJIOS),
+        )
+        await asyncio.sleep(1.3)
+        await accha.edit("__ᴅιиg ᴅσиg ꨄ︎ ѕтαятιиg..__")
+        await asyncio.sleep(0.2)
+        await accha.edit("__ᴅιиg ᴅσиg ꨄ sтαятιиg.....__")
+        await asyncio.sleep(0.2)
+        await accha.edit("__ᴅιиg ᴅσиg ꨄ︎ sтαятιиg..__")
+        await asyncio.sleep(0.2)
+        await accha.delete()
+        umm = await m.reply_sticker(
+            sticker = random.choice(STICKER),
+        )
+        await asyncio.sleep(2)
+        await umm.delete()
+        await m.reply_photo(
+            photo = random.choice(PHOTO),
+            caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](t.me/{BOT_USERNAME})**\n**➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────**\n**➻ ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ.**"""
+            reply_markup=InlineKeyboardMarkup(DEV_OP),
+        )
+    else:
+        await m.reply_text(
+                      text = START,
+                      reply_markup = InlineKeyboardMarkup(DEV_OP),
+   )
+
 @bot.on_callback_query()
 async def cb_handler(Client, query: CallbackQuery):
     if query.data == "HELP":
