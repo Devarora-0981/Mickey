@@ -35,10 +35,10 @@
 
 ## Special Thanks 🙏
 
-To [ᴍᴏᴇᴢɪʟʟᴀ](https://t.me/metavoid)
-To [ᴀɴᴏɴʏᴍᴏᴜs](https://t.me/Anonymous_was_bot)
-To [ᴀʙɪsʜɴᴏɪ](https://t.me/Abishnoi1m)
-TO [ʜʏᴘᴇʀ ᴋɪɴɢ](https://t.me/HYPER_AD13)
+ᴛᴏ [ᴍᴏᴇᴢɪʟʟᴀ](https://t.me/metavoid)
+,ᴛᴏ [ᴀɴᴏɴʏᴍᴏᴜs](https://t.me/Anonymous_was_bot)
+,ᴛᴏ [ᴀʙɪsʜɴᴏɪ](https://t.me/Abishnoi1m)
+,ᴛᴏ [ʜʏᴘᴇʀ ᴋɪɴɢ](https://t.me/HYPER_AD13)
 
 
 
