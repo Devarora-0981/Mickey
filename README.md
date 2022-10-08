@@ -36,9 +36,9 @@
 ## Special Thanks 🙏
 
 ᴛᴏ [ᴍᴏᴇᴢɪʟʟᴀ](https://t.me/metavoid)
-,ᴛᴏ [ᴀɴᴏɴʏᴍᴏᴜs](https://t.me/Anonymous_was_bot)
-,ᴛᴏ [ᴀʙɪsʜɴᴏɪ](https://t.me/Abishnoi1m)
-,ᴛᴏ [ʜʏᴘᴇʀ ᴋɪɴɢ](https://t.me/HYPER_AD13)
+ ,ᴛᴏ [ᴀɴᴏɴʏᴍᴏᴜs](https://t.me/Anonymous_was_bot)
+ ,ᴛᴏ [ᴀʙɪsʜɴᴏɪ](https://t.me/Abishnoi1m)
+ ,ᴛᴏ [ʜʏᴘᴇʀ ᴋɪɴɢ](https://t.me/HYPER_AD13)
 
 
 
