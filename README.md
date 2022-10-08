@@ -6,6 +6,8 @@
 <pre><i>VickMachineBot Is Not My Bot</i></pre>
 </details>
 
+## DEPLOYMENT 🚀
+
 
 <details>
 <summary><h4> Deploy To Heroku 🚀</h4></summary>
@@ -14,11 +16,11 @@
 </details>
 
 
-<i>Sample Bot Is Given Below, You Can Check That.</i>
+<i>ᴄʜᴇᴄᴋ ᴛʜᴇ ᴅᴇᴍᴏ ʙᴏᴛ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ!</i>
 
 
 <details>
-<summary>SAMPLE BOT ✨</summary>
+<summary>ᴅᴇᴍᴏ ʙᴏᴛ ✨</summary>
 <i> All The Customisations Like Different Start Images And Different Stickers Are Available. Just Check The Vars And Fork The Repository.</i>
 <p align="center"><a href="https://t.me/mickeymouse_robot"> <img src="https://img.shields.io/badge/Sample%20Bot-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
 </details>
@@ -30,19 +32,17 @@
 
 <p align="center"><a href="https://t.me/DEVBOTZ"> <img src="https://img.shields.io/badge/DEV%20BOTZ-blue?style=for-the-badge" width="220" height="38.45"/></a></p>
 
-## © Copyright Owned By [Moezilla](https://t.me/metavoidsupport)
 
 ## Special Thanks 🙏
 
-To [Moezilla](https://t.me/metavoid)
-To [Anonymous](https://t.me/Anonymous_was_bot)
-To [Abishnoi](https://t.me/Abishnoi1m)
-TO [Hyper King](https://t.me/HYPER_AD13)
+To [ᴍᴏᴇᴢɪʟʟᴀ](https://t.me/metavoid)
+To [ᴀɴᴏɴʏᴍᴏᴜs](https://t.me/Anonymous_was_bot)
+To [ᴀʙɪsʜɴᴏɪ](https://t.me/Abishnoi1m)
+TO [ʜʏᴘᴇʀ ᴋɪɴɢ](https://t.me/HYPER_AD13)
 
-<i>These All Helped Me. Thanks To Them 🙏.</i>
 
 
 <details>
-<summary><i>A Message For You!</i></summary>
+<summary><i>ᴀ ᴍᴇssᴀɢᴇ ғᴏʀ ʏᴏᴜ!</i></summary>
 <p><i>Give The ⭐</i></p>
 </details>
