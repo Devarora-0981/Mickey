@@ -21,7 +21,7 @@
 
 <details>
 <summary>ᴅᴇᴍᴏ ʙᴏᴛ ✨</summary>
-<i> All The Customisations Like Different Start Images And Different Stickers Are Available. Just Check The Vars And Fork The Repository.</i>
+<i>ᴀʟʟ ᴛʜᴇ ᴄᴜsᴛᴏᴍɪsᴀᴛɪᴏɴs ᴀʀᴇ ᴀᴠᴀɪʟᴀʙʟᴇ. ᴊᴜsᴛ ᴄʜᴇᴄᴋᴏᴜᴛ ᴛʜᴇ ʀᴇᴘᴏ ᴀɴᴅ ᴠᴀʀɪᴀʙʟᴇs.</i>
 <p align="center"><a href="https://t.me/mickeymouse_robot"> <img src="https://img.shields.io/badge/Sample%20Bot-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
 </details>
 
