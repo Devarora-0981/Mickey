@@ -6,7 +6,6 @@
 <pre><i>VickMachineBot Is Not My Bot</i></pre>
 </details>
 
-## DEPLOYMENT 🚀
 
 
 <details>
