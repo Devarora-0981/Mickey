@@ -350,7 +350,7 @@ async def restart(client, m: Message):
     else:
         await m.reply_photo(
                       photo = random.choice(PHOTO),
-                      caption = "ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!",
+                      caption = "<b><i>ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!</i></b>",
                       reply_markup = InlineKeyboardMarkup(HELP_BUTN),
       )
 
