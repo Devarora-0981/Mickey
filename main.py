@@ -185,6 +185,11 @@ CHATBOT_BACK = [
               InlineKeyboardButton(text="✨ ʙᴀᴄᴋ ✨", callback_data="CHATBOT_BACK"),
         ],
 ]
+HELP_START = [
+     [
+            InlineKeyboardButton(text="🚀 ʜᴇʟᴘ 🚀", callback_data="HELP"),
+     ],
+]
 
 ABOUT_BTN = [
       [
@@ -235,9 +240,10 @@ async def restart(client, m: Message):
             reply_markup=InlineKeyboardMarkup(DEV_OP),
         )
     else:
-        await m.reply_text(
-                      text = START,
-                      reply_markup = InlineKeyboardMarkup(DEV_OP),
+        await m.reply_photo(
+                      photo = random.choice(PHOTO),
+                      caption = START,
+                      reply_markup = InlineKeyboardMarkup(HELP_START),
    )
 
 @bot.on_callback_query()
