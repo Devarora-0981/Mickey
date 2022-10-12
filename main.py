@@ -342,7 +342,7 @@ async def repo(client, message):
 @bot.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
 async def restart(client, m: Message):
     if m.chat.type == "private":
-        hmm = await message.reply_photo(
+         hmm = await message.reply_photo(
                             photo = random.choice(PHOTO),
                             caption = HELP_READ,
                             reply_markup= InlineKeyboardMarkup(HELP_BTN),
@@ -350,7 +350,7 @@ async def restart(client, m: Message):
     else:
         await m.reply_photo(
                       photo = random.choice(PHOTO),
-                      caption = "<b><i>ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!</i></b>",
+                      caption = "<b>__ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!__</b>",
                       reply_markup = InlineKeyboardMarkup(HELP_BUTN),
       )
 
