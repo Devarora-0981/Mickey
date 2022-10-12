@@ -191,6 +191,12 @@ HELP_START = [
      ],
 ]
 
+HELP_BUTN = [
+     [
+           InlineKeyboardButton(text="🚀ʜᴇʟᴘ🚀", url=f"https://t.me/{BOT_USERNAME}?start=true"),
+     ],
+]
+
 ABOUT_BTN = [
       [
            InlineKeyboardButton(text="🎄 sᴜᴘᴘᴏʀᴛ 🎄", url=f"https://t.me/{SUPPORT_GRP}"),  
@@ -334,11 +340,20 @@ async def repo(client, message):
                    disable_web_page_preview = True,
       )
 @bot.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
-async def restart(client, message):
-    hmm = await message.reply_text(
-                        text = HELP_READ,
-                        reply_markup= InlineKeyboardMarkup(HELP_BTN),
-       )
+async def restart(client, m: Message):
+    if m.chat.type == "private":
+        hmm = await message.reply_photo(
+                            photo = random.choice(PHOTO),
+                            caption = HELP_READ,
+                            reply_markup= InlineKeyboardMarkup(HELP_BTN),
+        )
+    else:
+        await m.reply_photo(
+                      photo = random.choice(PHOTO),
+                      caption = "ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!",
+                      reply_markup = InlineKeyboardMarkup(HELP_BUTN),
+      )
+
 
 @bot.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
 async def ping(client, message: Message):
