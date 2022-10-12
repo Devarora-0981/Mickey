@@ -18,15 +18,15 @@
 <details>
 <summary>ᴅᴇᴍᴏ ʙᴏᴛ ✨</summary>
 <i>ᴀʟʟ ᴛʜᴇ ᴄᴜsᴛᴏᴍɪsᴀᴛɪᴏɴs ᴀʀᴇ ᴀᴠᴀɪʟᴀʙʟᴇ. ᴊᴜsᴛ ᴄʜᴇᴄᴋᴏᴜᴛ ᴛʜᴇ ʀᴇᴘᴏ ᴀɴᴅ ᴠᴀʀɪᴀʙʟᴇs.</i>
-<p align="center"><a href="https://t.me/mickeymouse_robot"> <img src="https://img.shields.io/badge/Demo%20Bot-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://t.me/mickeymouse_robot"> <img src="https://img.shields.io/badge/Demo%20Bot-black?style=for-the-badge&logo=Telegram" width="220" height="39"/></a></p>
 </details>
 
 
 ### Support 
 
-<p align="center"><a href="https://t.me/we_rfriends"> <img src="https://img.shields.io/badge/SUPPORT-black?style=for-the-badge" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://t.me/we_rfriends"> <img src="https://img.shields.io/badge/SUPPORT%20GROUP-black?style=for-the-badge&logo=Telegram" width="220" height="38.5"/></a></p>
 
-<p align="center"><a href="https://t.me/DEVBOTZ"> <img src="https://img.shields.io/badge/DEV%20BOTZ-blue?style=for-the-badge" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://t.me/DEVBOTZ"> <img src="https://img.shields.io/badge/SUPPORT%20CHANNEL-black?style=for-the-badge&logo=Telegram" width="220" height="38.5"/></a></p>
 
 
 ## Special Thanks 🙏
