@@ -193,7 +193,7 @@ HELP_START = [
 
 HELP_BUTN = [
      [
-           InlineKeyboardButton(text="🚀ʜᴇʟᴘ🚀", url=f"https://t.me/{BOT_USERNAME}?start=true"),
+           InlineKeyboardButton(text="🚀 ʜᴇʟᴘ 🚀", url=f"https://t.me/{BOT_USERNAME}?start=help"),
      ],
 ]
 
