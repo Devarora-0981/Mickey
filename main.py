@@ -348,7 +348,7 @@ async def cb_handler(Client, query: CallbackQuery):
 async def repo(client, message):
     await message.reply_text(
                    text= SOURCE_READ,
-                   reply_markup = InlineKeyboardMarkup(BACK),
+                   reply_markup = InlineKeyboardMarkup(CLOSE),
                    disable_web_page_preview = True,
       )
 @bot.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
