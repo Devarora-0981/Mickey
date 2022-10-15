@@ -25,6 +25,5 @@
 [ᴀʙɪsʜɴᴏɪ](https://t.me/Abishnoi1m), 
 [ʜʏᴘᴇʀ ᴋɪɴɢ](https://t.me/HYPER_AD13)
 
-## <i>ᴀ ᴍᴇssᴀɢᴇ ғᴏʀ ʏᴏᴜ!</i>
-<i>Give The ⭐</i>
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
