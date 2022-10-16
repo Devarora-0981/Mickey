@@ -370,7 +370,9 @@ async def restart(client, m: Message):
 @bot.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
 async def ping(client, message: Message):
         start = datetime.now()
-        bhenklode= await message.reply(EMOJIOS)
+        bhenklode= await message.reply_text(
+                           text = random.choice(EMOJIOS),
+       )
         await asyncio.sleep(1.5)
         await bhenklode.delete()
         t = "__ριиgιиg...__"
