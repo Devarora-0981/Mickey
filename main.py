@@ -369,7 +369,7 @@ async def repo(client, message):
 @bot.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
 async def restart(client, m: Message):
     if m.chat.type == "private":
-        hmm = await message.reply_photo(
+        hmm = await m.reply_photo(
                             photo = random.choice(PHOTO),
                             caption = HELP_READ,
                             reply_markup= InlineKeyboardMarkup(HELP_BTN),
