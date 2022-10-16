@@ -389,25 +389,25 @@ async def ping(client, message: Message):
               bhenklode= await message.reply_text(
                                      text = random.choice(EMOJIOS),
              )
-               await asyncio.sleep(1.65)
-               await bhenklode.delete()
-               t = f"Pinging {BOT_NAME}\nThis May Take Some Time.."
-               txxt = await message.reply(t)
-               await asyncio.sleep(1.2)
-               await txxt.delete()
-               end = datetime.now()
-               ms = (end-start).microseconds / 1000
-               await message.reply_photo(
+                await asyncio.sleep(1.65)
+                await bhenklode.delete()
+                t = f"Pinging {BOT_NAME}\nThis May Take Some Time.."
+                txxt = await message.reply(t)
+                await asyncio.sleep(1.2)
+                await txxt.delete()
+                end = datetime.now()
+                ms = (end-start).microseconds / 1000
+                await message.reply_photo(
                              photo=random.choice(PHOTO),
                              caption=f"нey вαву!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>||мαdє ωιтн ❣️ ву [Ꭰev🎋](https://t.me/Dev_Arora_0981)||</b>",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
-              )
-          else:
-              await message.reply_photo(
+               )
+           else:
+               await message.reply_photo(
                              photo=random.choice(PHOTO),
                              caption=f"нey вαву!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>||мαdє ωιтн ❣️ ву [Ꭰev🎋](https://t.me/Dev_Arora_0981)||</b>",
                              reply_markup=InlineKeyboardMarkup(PNG_BUTN),
-         )
+             )
 
 
 @bot.on_message(
