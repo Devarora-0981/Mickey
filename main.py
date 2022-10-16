@@ -171,6 +171,21 @@ CHATBOT_ON = [
             InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ", callback_data=f"rmchat"),
         ],
 ]
+
+PNG_BTN = [
+    [
+         InlineKeyboardButton(
+             text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸",
+             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+         ),
+     ],
+     [
+         InlineKeyboardButton(text="✨ ᴄʟᴏsᴇ ✨", 
+                              callback_data="CLOSE",
+         ),
+     ],
+]
+
 TOOLS_DATA_READ = f"""
 <u>**ᴛᴏᴏʟs ғᴏʀ {BOT_NAME} ᴀʀᴇ:**</u>
 **➻ ᴜsᴇ `/repo` ғᴏʀ ɢᴇᴛᴛɪɴɢ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ!**
@@ -354,7 +369,7 @@ async def repo(client, message):
 @bot.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
 async def restart(client, m: Message):
     if m.chat.type == "private":
-         hmm = await message.reply_photo(
+        hmm = await message.reply_photo(
                             photo = random.choice(PHOTO),
                             caption = HELP_READ,
                             reply_markup= InlineKeyboardMarkup(HELP_BTN),
@@ -369,23 +384,32 @@ async def restart(client, m: Message):
 
 @bot.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
 async def ping(client, message: Message):
-        start = datetime.now()
-        bhenklode= await message.reply_text(
-                           text = random.choice(EMOJIOS),
-       )
-        await asyncio.sleep(1.65)
-        await bhenklode.delete()
-        t = f"Pinging {BOT_NAME}. This May Take Some Time.."
-        txxt = await message.reply(t)
-        await asyncio.sleep(1.2)
-        await txxt.delete()
-        end = datetime.now()
-        ms = (end-start).microseconds / 1000
-        await message.reply_photo(
+    if message.chat.type == "private":
+              start = datetime.now()
+              bhenklode= await message.reply_text(
+                                     text = random.choice(EMOJIOS),
+             )
+             await asyncio.sleep(1.65)
+             await bhenklode.delete()
+             t = f"Pinging {BOT_NAME}\nThis May Take Some Time.."
+             txxt = await message.reply(t)
+             await asyncio.sleep(1.2)
+             await txxt.delete()
+             end = datetime.now()
+             ms = (end-start).microseconds / 1000
+             await message.reply_photo(
                              photo=random.choice(PHOTO),
                              caption=f"нey вαву!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>||мαdє ωιтн ❣️ ву [Ꭰev🎋](https://t.me/Dev_Arora_0981)||</b>",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
+            )
+        else:
+            await message.reply_photo(
+                             photo=random.choice(PHOTO),
+                             caption=f"нey вαву!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>||мαdє ωιтн ❣️ ву [Ꭰev🎋](https://t.me/Dev_Arora_0981)||</b>",
+                             reply_markup=InlineKeyboardMarkup(PNG_BUTN),
        )
+
+                         
 
 
 @bot.on_message(
