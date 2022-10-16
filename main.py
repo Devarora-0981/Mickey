@@ -409,29 +409,6 @@ async def ping(client, message: Message):
                         reply_markup= InlineKeyboardMarkup(PNG_BUTN),
                         )
                         
-                    
-             
-
-                await b
-              
-        
-       
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @bot.on_message(
     filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"])
     & ~filters.private)
