@@ -389,7 +389,7 @@ async def ping(client, message: Message):
               bhenklode= await message.reply_text(
                                      text = random.choice(EMOJIOS),
                   )
-                await asyncio.sleep(1.65)
+                await asyncio.sleep(1.6)
                 await bhenklode.delete()
                 t = f"Pinging {BOT_NAME}/nThis May Take Some Time.."
                 txxt = await message.reply(t)
