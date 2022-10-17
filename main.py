@@ -384,31 +384,20 @@ async def restart(client, m: Message):
 
 @bot.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
 async def ping(client, message: Message):
-    if message.chat.type == "private":
-              start = datetime.now()
-              bhenklode= await message.reply_text(
-                                     text = random.choice(EMOJIOS),
-                  )
-                await asyncio.sleep(1.6)
-                await bhenklode.delete()
-                t = f"Pinging {BOT_NAME}/nThis May Take Some Time.."
-                txxt = await message.reply(t)
-                await asyncio.sleep(2)
-                await txxt.delete()
-                end = datetime.now()
-                ms = (end-start).microseconds / 1000
-                await message.reply_photo(
-                    photo = random.choice(PHOTO),
-                    caption = f"нey вαву!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>||мαdє ωιтн ❣️ ву [Ꭰev🎋](https://t.me/Dev_Arora_0981)||</b>",
-                    reply_markup=InlineKeyboardMarkup(PNG_BTN),
-                    )
-     else:
-         await message.reply_photo(
-         photo=random.choice(PHOTO),
-         caption=f"нey вαву!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>||мαdє ωιтн ❣️ ву [Ꭰev🎋](https://t.me/Dev_Arora_0981)||</b>",
-         reply_markup= InlineKeyboardMarkup(PNG_BUTN),
-                        )
-                        
+    await message.delete()
+    start = datetime.now()
+    wtfbhemchomd = await message.reply_sticker(
+                       sticker= random.choice(STICKER),
+    )
+    end = datetime.now()
+    ms = (end-start).microseconds / 1000
+    await message.reply_photo(
+        photo=random.choice(PHOTO),
+        caption=f"нey вαву!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>||мαdє ωιтн ❣️ ву [Ꭰev🎋](https://t.me/Dev_Arora_0981)||</b>",
+        reply_markup=InlineKeyboardMarkup(PNG_BTN),
+    )
+
+                  
 @bot.on_message(
     filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"])
     & ~filters.private)
