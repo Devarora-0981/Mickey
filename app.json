@@ -19,8 +19,8 @@
             "required": true
         },
         "OWNER_ID": {
-           "description": "Id Of Owner. Get This From @Rabbit_Robot, type /id (Eg: 123456)"
-           "required": true
+            "description": "Id Of Owner. Get This From @Rabbit_Robot, type /id (Eg: 123456)"
+            "required": true
         },
         "BOT_NAME": {
             "description": "Simple Bot-name. Do not use Modified Text..",
