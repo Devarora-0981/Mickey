@@ -41,6 +41,7 @@ STKR6 = os.environ.get("STKR6", None)
 STKR7 = os.environ.get("STKR7", None)
 STKR8 = os.environ.get("STKR8", None)
 STKR9 = os.environ.get("STKR9", None)
+OWNER_ID = os.environ.get("OWNER_ID")
 
 bot = Client(
     "VickBot" ,
@@ -106,7 +107,7 @@ START = f"""
 """
 DEV_OP = [
     [
-        InlineKeyboardButton(text="🥀 ᴏᴡɴᴇʀ 🥀", url=f"tg://settings"),
+        InlineKeyboardButton(text="🥀 ᴏᴡɴᴇʀ 🥀", user_id=f"{USER_ID}"),
         InlineKeyboardButton(text="✨ ꜱᴜᴘᴘᴏʀᴛ ✨", url=f"https://t.me/{SUPPORT_GRP}"),
     ],
     [
