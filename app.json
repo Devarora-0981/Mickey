@@ -32,43 +32,43 @@
         },
         "STKR": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false
         },
         "STKR1": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false
         },
         "STKR2": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false
         },
         "STKR3": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false
         },
         "STKR4": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false 
         },
         "STKR5": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false 
         },
         "STKR6": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false 
         },
         "STKR7": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false 
         },
        "STKR8": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false 
         },
         "STKR9": {
             "description": "Sticker for start ",
-            "required": true
+            "required": false 
         },
         "START_IMG1": {
             "description": "Start Image For Bot.",
