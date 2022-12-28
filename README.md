@@ -22,10 +22,10 @@
 <p align="center"><a href="https://t.me/DEVBOTZ"> <img src="https://img.shields.io/badge/JOIN-SUPPORT%20CHANNEL-black?style=for-the-badge&logo=Telegram" width="220" height="38.5"/></a></p>
 
 ## sᴘᴇᴄɪᴀʟ ᴛʜᴀɴᴋs 🙏
-ᴛᴏ [ᴍᴏᴇᴢɪʟʟᴀ](https://t.me/metavoid), 
-[ᴀɴᴏɴʏᴍᴏᴜs](https://t.me/Anonymous_was_bot), 
-[ᴀʙɪsʜɴᴏɪ](https://t.me/Abishnoi1m), 
-[ʜʏᴘᴇʀ ᴋɪɴɢ](https://t.me/HYPER_AD13)
+- [ᴘʀᴀɴᴀᴠ ᴀᴊᴀʏ](https://github.com/Moezilla)
+- [ᴀɴᴏɴʏᴍᴏᴜs](https://github.com/AnonymousX1025)
+- [ᴀʙɪsʜɴᴏɪ](https://t.me/Abishnoi1m)
+- [ʜʏᴘᴇʀ ᴋɪɴɢ](https://t.me/HYPER_AD13)
 
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
