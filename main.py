@@ -1,8 +1,5 @@
 #Don't remove This Line From Here. @Dev_Arora_0981 | @DevArora0981
 #Github :- Devarora0981 | Devarora0987
-from pyrogram import Client, filters
-from pyrogram.types import *
-from pymongo import MongoClient
 import requests
 import random
 import os
@@ -10,6 +7,13 @@ import re
 import asyncio
 import time
 from datetime import datetime
+
+from pyrogram import Client, filters
+from pyrogram.types import *
+
+from pymongo import MongoClient
+from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
+
 
 API_ID = os.environ.get("API_ID", None) 
 API_HASH = os.environ.get("API_HASH", None) 
@@ -49,6 +53,10 @@ bot = Client(
     bot_token = BOT_TOKEN
 )
 
+mongo = MongoCli(config.MONGO_DB_URI)
+db = mongo.Anonymous
+chatsdb = db.chatsdb
+usersdb = db.users
 
 async def is_admins(chat_id: int):
     return [
@@ -131,8 +139,9 @@ PNG_BTN = [
          ),
      ],
      [
-         InlineKeyboardButton(text="✨ sᴜᴘᴘᴏʀᴛ ✨", 
-                              url=f"https://t.me/{SUPPORT_GRP}",
+         InlineKeyboardButton(
+             text="✨ sᴜᴘᴘᴏʀᴛ ✨", 
+             url=f"https://t.me/{SUPPORT_GRP}",
          ),
      ],
 ]
@@ -194,6 +203,46 @@ TOOLS_DATA_READ = f"""
 **──────────────**
 <b>||©️ @{OWNER_USERNAME}||</b>
 """
+
+async def is_served_user(user_id: int) -> bool:
+    user = await usersdb.find_one({"user_id": user_id})
+    if not user:
+        return False
+    return True
+
+async def get_served_users() -> list:
+    users_list = []
+    async for user in usersdb.find({"user_id": {"$gt": 0}}):
+        users_list.append(user)
+    return users_list
+
+async def add_served_user(user_id: int):
+    is_served = await is_served_user(user_id)
+    if is_served:
+        return
+    return await usersdb.insert_one({"user_id": user_id})
+
+async def get_served_chats() -> list:
+    chats = chatsdb.find({"chat_id": {"$lt": 0}})
+    if not chats:
+        return []
+    chats_list = []
+    for chat in await chats.to_list(length=1000000000):
+        chats_list.append(chat)
+    return chats_list
+
+async def is_served_chat(chat_id: int) -> bool:
+    chat = await chatsdb.find_one({"chat_id": chat_id})
+    if not chat:
+        return False
+    return True
+
+
+async def add_served_chat(chat_id: int):
+    is_served = await is_served_chat(chat_id)
+    if is_served:
+        return
+    return await chatsdb.insert_one({"chat_id": chat_id})
 
 CHATBOT_READ = f"""
 <u>**ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ {BOT_NAME}**</u>
@@ -260,9 +309,7 @@ async def restart(client, m: Message):
         await accha.edit("__ᴅιиg ᴅσиg ꨄ︎ sтαятιиg..__")
         await asyncio.sleep(0.2)
         await accha.delete()
-        umm = await m.reply_sticker(
-            sticker = random.choice(STICKER),
-        )
+        umm = await m.reply_sticker(sticker=random.choice(STICKER))
         await asyncio.sleep(2)
         await umm.delete()
         await m.reply_photo(
@@ -270,12 +317,14 @@ async def restart(client, m: Message):
             caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](t.me/{BOT_USERNAME})**\n**➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ]**\n<b>||๏ ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ||</b>""",
             reply_markup=InlineKeyboardMarkup(DEV_OP),
         )
+        await add_served_user(m.from_user.id)
     else:
         await m.reply_photo(
-                      photo = random.choice(PHOTO),
-                      caption = START,
-                      reply_markup = InlineKeyboardMarkup(HELP_START),
-   )
+            photo=random.choice(PHOTO),
+            caption=START,
+            reply_markup=InlineKeyboardMarkup(HELP_START),
+        )
+        await add_served_chat(m.chat.id)
 
 @bot.on_callback_query()
 async def cb_handler(Client, query: CallbackQuery):
@@ -284,7 +333,7 @@ async def cb_handler(Client, query: CallbackQuery):
     if query.data == "HELP":
         await query.message.edit_text(
                       text = HELP_READ,
-                      reply_markup = InlineKeyboardMarkup(HELP_BTN),
+                      reply_markup=InlineKeyboardMarkup(HELP_BTN),
                       disable_web_page_preview=True,
      )
     elif query.data == "CLOSE":
@@ -362,35 +411,49 @@ async def cb_handler(Client, query: CallbackQuery):
 @bot.on_message(filters.command("repo"))
 async def repo(client, message):
     await message.reply_text(
-                   text= SOURCE_READ,
-                   reply_markup = InlineKeyboardMarkup(CLOSE_BTN),
-                   disable_web_page_preview = True,
-      )
+       text=SOURCE_READ,
+       reply_markup=InlineKeyboardMarkup(CLOSE_BTN),
+       disable_web_page_preview=True,
+    )
+
 @bot.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
 async def restart(client, m: Message):
     if m.chat.type == "private":
         hmm = await m.reply_photo(
-                            photo = random.choice(PHOTO),
-                            caption = HELP_READ,
-                            reply_markup= InlineKeyboardMarkup(HELP_BTN),
+            photo=random.choice(PHOTO),
+            caption=HELP_READ,
+            reply_markup=InlineKeyboardMarkup(HELP_BTN),
         )
+        await add_served_user(m.from_user.id)
     else:
         await m.reply_photo(
-                      photo = random.choice(PHOTO),
-                      caption = "**ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!**",
-                      reply_markup = InlineKeyboardMarkup(HELP_BUTN),
-      )
+            photo=random.choice(PHOTO),
+            caption="**ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!**",
+            reply_markup=InlineKeyboardMarkup(HELP_BUTN),
+        )
+        await add_served_chat(m.chat.id)
 
+
+@bot.on_message(filters.command("stats") & filters.user(OWNER_ID))
+async def get_st(_, msg: Message):
+    users = len(await get_served_users())
+    chats = len(await get_served_chats())
+    await message.reply_text(
+        f"""ᴛᴏᴛᴀʟ sᴛᴀᴛs ᴏғ {BOT_NAME}
+➻ **ᴄʜᴀᴛs :** {chats}
+➻ **ᴜsᴇʀs :** {users}"""
+    )
 
 @bot.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
 async def ping(client, message: Message):
+    if message.chat.type == "private":
+        await add_served_user(message.from_user.id)
+    else:
+        await add_served_chat(message.chat.id)
     await message.delete()
     start = datetime.now()
-    wtfbhemchomd = await message.reply_sticker(
-                       sticker= random.choice(STICKER),
-    )
-    end = datetime.now()
-    ms = (end-start).microseconds / 1000
+    wtfbhemchomd = await message.reply_sticker(sticker= random.choice(STICKER))
+    ms = (datetime.now()-start).microseconds / 1000
     await message.reply_photo(
         photo=random.choice(PHOTO),
         caption=f"нey вαву!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>||мαdє ωιтн ❣️ ву [Ꭰev🎋](https://t.me/Dev_Arora_0981)||</b>",
@@ -404,6 +467,10 @@ async def ping(client, message: Message):
 async def chatonoff(client: Client, message: Message):
     if not message.from_user:
         return
+    if message.chat.type == "private":
+        await add_served_user(message.from_user.id)
+    else:
+        await add_served_chat(message.chat.id)
     else:
         user = message.from_user.id
         chat_id = message.chat.id
