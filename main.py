@@ -467,10 +467,6 @@ async def ping(client, message: Message):
 async def chatonoff(client: Client, message: Message):
     if not message.from_user:
         return
-    if message.chat.type == "private":
-        await add_served_user(message.from_user.id)
-    else:
-        await add_served_chat(message.chat.id)
     else:
         user = message.from_user.id
         chat_id = message.chat.id
