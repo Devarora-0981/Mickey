@@ -44,7 +44,6 @@ STKR5 = os.environ.get("STKR5", "CAACAgQAAxkBAALRj2NZXXJw6Pw7TJgYQStoq4u2oYpmAAK
 STKR6 = os.environ.get("STKR6", "CAACAgQAAxkBAALRkGNZXYmAXYRR4lmCxHGPgG012Vm0AAJiFwACpvFxHuCsJc_EpuEVKgQ")
 STKR7 = os.environ.get("STKR7", "CAACAgQAAxkBAALRkWNZXYyCvkfI4d1lK0AEMkG0GdUmAAJmFwACpvFxHnvJHTM8_o9XKgQ")
 STKR8 = os.environ.get("STKR8", "CAACAgQAAxkBAALRkmNZXZg1zuakmgkPf2lfXPXi4bZaAALACgACQUGpUjAAAYL3e09XCyoE")
-STKR9 = os.environ.get("STKR9", "CAACAgQAAxkBAALRpWNZXzUmc-SfzlpERZFVXwABE
 
 bot = Client(
     "VickBot" ,
@@ -438,10 +437,10 @@ async def restart(client, m: Message):
 async def get_st(_, msg: Message):
     users = len(await get_served_users())
     chats = len(await get_served_chats())
-    await msg.reply_text(
-        f"""ᴛᴏᴛᴀʟ sᴛᴀᴛs ᴏғ {BOT_NAME}
-➻ **ᴄʜᴀᴛs :** {chats}
-➻ **ᴜsᴇʀs :** {users}"""
+    await msg.reply_photo(photo="https://te.legra.ph/file/2d5b054acddf865d4d83e.png",
+                          caption=f"""ᴛᴏᴛᴀʟ sᴛᴀᴛs ᴏғ {BOT_NAME}
+          ➻ **ᴄʜᴀᴛs :** {chats}
+          ➻ **ᴜsᴇʀs :** {users}"""
     )
 
 @bot.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
