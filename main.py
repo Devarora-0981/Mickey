@@ -102,7 +102,6 @@ STICKER = [
       STKR6,
       STKR7,
       STKR8,
-      STKR9,
 ]
 START = f"""
 **๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}]({START_IMG1})**
