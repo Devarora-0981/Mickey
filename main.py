@@ -15,13 +15,13 @@ from pymongo import MongoClient
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
 
 
-API_ID = os.environ.get("API_ID", None) 
+API_ID = int(os.environ.get("API_ID", None))
 API_HASH = os.environ.get("API_HASH", None) 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None) 
 MONGO_URL = os.environ.get("MONGO_URL", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME") 
 UPDATE_CHNL = os.environ.get("UPDATE_CHNL")
-OWNER_ID = os.environ.get("OWNER_ID")
+OWNER_ID = int(os.environ.get("OWNER_ID"))
 OWNER_USERNAME = os.environ.get("OWNER_USERNAME")
 SUPPORT_GRP = os.environ.get("SUPPORT_GRP")
 BOT_NAME = os.environ.get("BOT_NAME")
@@ -46,10 +46,10 @@ STKR7 = os.environ.get("STKR7", "CAACAgQAAxkBAALRkWNZXYyCvkfI4d1lK0AEMkG0GdUmAAJ
 STKR8 = os.environ.get("STKR8", "CAACAgQAAxkBAALRkmNZXZg1zuakmgkPf2lfXPXi4bZaAALACgACQUGpUjAAAYL3e09XCyoE")
 
 bot = Client(
-    "VickBot" ,
-    api_id = API_ID,
-    api_hash = API_HASH ,
-    bot_token = BOT_TOKEN
+    "Mickey" ,
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN,
 )
 
 mongo = MongoCli(MONGO_URL)
@@ -432,14 +432,13 @@ async def restart(client, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@bot.on_message(filters.command("stats"))
+@bot.on_message(filters.command("stats") & filters.user(OWNER_ID))
 async def get_st(_, msg: Message):
     users = len(await get_served_users())
     chats = len(await get_served_chats())
-    await msg.reply_photo(photo="https://te.legra.ph/file/2d5b054acddf865d4d83e.png",
-                          caption=f"""ᴛᴏᴛᴀʟ sᴛᴀᴛs ᴏғ {BOT_NAME}
-          ➻ **ᴄʜᴀᴛs :** {chats}
-          ➻ **ᴜsᴇʀs :** {users}"""
+    await msg.reply_photo(
+        photo="https://te.legra.ph/file/2d5b054acddf865d4d83e.png",
+        caption=f"ᴛᴏᴛᴀʟ sᴛᴀᴛs ᴏғ {BOT_NAME}\n\n➻ **ᴄʜᴀᴛs :** {chats}\n➻ **ᴜsᴇʀs :** {users}",
     )
 
 @bot.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
