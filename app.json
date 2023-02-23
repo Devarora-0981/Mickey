@@ -18,6 +18,11 @@
             "description": "Owner Username without @",
             "required": true
         },
+        "OWNER_ID": {
+            "description": "Your Id Here! For Eg: 54326909.",
+            "required": true,
+            "value": "5350929381"
+        },
         "BOT_NAME": {
             "description": "Simple Bot-name. Do not use Modified Text..",
             "required": true
