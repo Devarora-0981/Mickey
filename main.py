@@ -239,6 +239,55 @@ async def repo(client, message):
        disable_web_page_preview=True,
     )
 
+@bot.on_message(filters.command("id"))
+async def getid(client, message):
+    chat = message.chat
+    your_id = message.from_user.id
+    message_id = message.message_id
+    reply = message.reply_to_message
+
+    text = f"**ᴍᴇssᴀɢᴇ ɪᴅ:** `{message_id}`\n"
+    text += f"**ʏᴏᴜʀ ɪᴅ:** `{your_id}`\n"
+
+    if not message.command:
+        message.command = message.text.split()
+
+    if not message.command:
+        message.command = message.text.split()
+
+    if len(message.command) == 2:
+        try:
+            split = message.text.split(None, 1)[1].strip()
+            user_id = (await client.get_users(split)).id
+            text += f"**ᴜsᴇʀ ɪᴅ:** `{user_id}`\n"
+
+        except Exception:
+            return await message.reply_text("ᴛʜɪs ᴜsᴇʀ ᴅᴏᴇsɴ'ᴛ ᴇxɪsᴛ.", quote=True)
+
+    text += f"**ᴄʜᴀᴛ ɪᴅ:** `{chat.id}`\n\n"
+
+    if (
+        not getattr(reply, "empty", True)
+        and not message.forward_from_chat
+        and not reply.sender_chat
+    ):
+        text += f"**ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ ɪᴅ:** `{reply.message_id}`\n"
+        text += f"**ʀᴇᴘʟɪᴇᴅ ᴜsᴇʀ ɪᴅ:** `{reply.from_user.id}`\n\n"
+
+    if reply and reply.forward_from_chat:
+        text += f"ᴛʜᴇ ғᴏʀᴡᴀʀᴅᴇᴅ ᴄʜᴀɴɴᴇʟ, {reply.forward_from_chat.title}, ʜᴀs ᴀɴ ɪᴅ ᴏғ `{reply.forward_from_chat.id}`\n\n"
+        print(reply.forward_from_chat)
+
+    if reply and reply.sender_chat:
+        text += f"ɪᴅ ᴏғ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴄʜᴀᴛ/ᴄʜᴀɴɴᴇʟ, ɪs `{reply.sender_chat.id}`"
+        print(reply.sender_chat)
+
+    await message.reply_text(
+        text,
+        disable_web_page_preview=True,
+        parse_mode="md",
+    )
+    
 @bot.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
 async def restart(client, m: Message):
     if m.chat.type == "private":
@@ -255,6 +304,13 @@ async def restart(client, m: Message):
             reply_markup=InlineKeyboardMarkup(HELP_BUTN),
         )
         await add_served_chat(m.chat.id)
+   
+@bot.on_message(filters.new_chat_members)
+async def welcome(client, message: Message):
+    for member in message.new_chat_members:
+        await message.reply_photo(photo = random.choice(PHOTO),
+                                  caption = START,
+            
 
 
 @bot.on_message(filters.command("stats") & filters.user(OWNER_ID))
