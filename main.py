@@ -309,7 +309,7 @@ async def restart(client, m: Message):
 async def welcome(client, message: Message):
     for member in message.new_chat_members:
         await message.reply_photo(photo = random.choice(PHOTO),
-                                  caption = START,
+                                  caption = START)
             
 
 
