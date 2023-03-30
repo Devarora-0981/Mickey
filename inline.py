@@ -6,12 +6,12 @@ from config import *
 DEV_OP = [
     [
         InlineKeyboardButton(text="🥀 ᴏᴡɴᴇʀ 🥀", url=f"tg://settings"),
-        InlineKeyboardButton(text="✨ ꜱᴜᴘᴘᴏʀᴛ ✨", url=f"https://t.me/{SUPPORT_GRP}"),
+        InlineKeyboardButton(text="✨ ꜱᴜᴘᴘᴏʀᴛ ✨", url=f"https://t.me/{TheLove2Forever}"),
     ],
     [
         InlineKeyboardButton(
             text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+            url=f"https://t.me/{Evaa_Chatt_Bot}?startgroup=true",
         ),
     ],
     [
@@ -27,7 +27,7 @@ PNG_BTN = [
     [
          InlineKeyboardButton(
              text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸",
-             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+             url=f"https://t.me/{Evaa_Chatt_Bot}?startgroup=true",
          ),
      ],
      [
@@ -98,7 +98,7 @@ HELP_START = [
 
 HELP_BUTN = [
      [
-           InlineKeyboardButton(text="🚀 ʜᴇʟᴘ 🚀", url=f"https://t.me/{BOT_USERNAME}?start=help"),
+           InlineKeyboardButton(text="🚀 ʜᴇʟᴘ 🚀", url=f"https://t.me/{Evaa_Chatt_Bot}?start=help"),
            InlineKeyboardButton(text="🐳 ᴄʟᴏsᴇ 🐳", callback_data="CLOSE"),
      ],
 ]
@@ -106,15 +106,15 @@ HELP_BUTN = [
 
 ABOUT_BTN = [
       [
-           InlineKeyboardButton(text="🎄 sᴜᴘᴘᴏʀᴛ 🎄", url=f"https://t.me/{SUPPORT_GRP}"),  
+           InlineKeyboardButton(text="🎄 sᴜᴘᴘᴏʀᴛ 🎄", url=f"https://t.me/{TheLove2Forever}"),  
            InlineKeyboardButton(text="🚀 ʜᴇʟᴘ 🚀", callback_data="HELP"),
       ],
       [    
-           InlineKeyboardButton(text="🍾 ᴏᴡɴᴇʀ 🍾", url=f"https://t.me/{OWNER_USERNAME}"), 
+           InlineKeyboardButton(text="🍾 ᴏᴡɴᴇʀ 🍾", url=f"https://t.me/{ii_Romana_ii}"), 
            InlineKeyboardButton(text="❄️ sᴏᴜʀᴄᴇ ❄️", callback_data="SOURCE"),
       ],
       [ 
-           InlineKeyboardButton(text="🐳 ᴜᴘᴅᴀᴛᴇs 🐳", url=f"https://t.me/{UPDATE_CHNL}"),  
+           InlineKeyboardButton(text="🐳 ᴜᴘᴅᴀᴛᴇs 🐳", url=f"https://t.me/{TheLove2Forever}"),  
            InlineKeyboardButton(text="✨ ʙᴀᴄᴋ ✨", callback_data="BACK"),
       ],
 ]
