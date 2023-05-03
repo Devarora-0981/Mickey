@@ -5,3 +5,4 @@ requests
 dnspython
 tgcrypto==1.2.2
 asyncio
+python-dotenv
