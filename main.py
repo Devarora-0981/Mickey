@@ -1,5 +1,5 @@
-#Don't remove This Line From Here. @Dev_Arora_0981 | @DevArora0981
-#Github :- Devarora0981 | Devarora0987
+#Don't remove This Line From Here. Tg: @Dev_Arora_0981 | @DevArora0981
+#Github :- Devarora-0981 | Devarora2604
 import requests
 import random
 import os
@@ -43,13 +43,6 @@ PHOTO = [
     START_IMG1,
     START_IMG2,
     START_IMG3,
-    START_IMG4,
-    START_IMG5,
-    START_IMG6,
-    START_IMG7,
-    START_IMG8,
-    START_IMG9,
-    START_IMG10,
 ]
 
 EMOJIOS = [ 
@@ -66,15 +59,9 @@ EMOJIOS = [
 ]
       
 STICKER = [
-      STKR,
       STKR1,
       STKR2,
       STKR3,
-      STKR4,
-      STKR5,
-      STKR6,
-      STKR7,
-      STKR8,
 ]
 
 async def is_served_user(user_id: int) -> bool:
