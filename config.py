@@ -15,9 +15,9 @@ UPDATE_CHNL = getenv("UPDATE_CHNL", "DadEyeBotz")
 OWNER_USERNAME = getenv("OWNER_USERNAME", "Dev_Arora_0981")
 
 #Random Start Images
-START_IMG1 = getenv("START_IMG1")
-START_IMG2 = getenv("START_IMG2")
-START_IMG3 = getenv("START_IMG3")
+START_IMG1 = getenv("START_IMG1", "https://te.legra.ph/file/5bf629d10afd4af953585.jpg")
+START_IMG2 = getenv("START_IMG2", "https://te.legra.ph/file/c482a7e55b459ffe07502.jpg")
+START_IMG3 = getenv("START_IMG3", "https://te.legra.ph/file/7a321b99fe99d9d8b5117.jpg")
 
 #Random Stickers 
 STKR1 = getenv("STKR1", "CAACAgQAAxkBAALRi2NZXUgjZCT775L5Nr0XrLbQ6XIpAAK_EQACpvFxHq2xh5JRVJNrKgQ")
