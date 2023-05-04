@@ -7,7 +7,7 @@ import time
 
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
 from pyrogram import Client
-
+from pymongo import MongoClient
 import config
 from Mickey.modules import all_modules
 
@@ -23,8 +23,12 @@ LOGGER = logging.getLogger(__name__)
 
 
 boot = time.time()
-mongo = MongoCli(config.MONGO_DB_URI)
+mongo = MongoCli(config.MONGO_URL)
 db = mongo.Anonymous
+
+vickdb = MongoClient(MONGO_URL)
+vick = vickdb["VickDb"]["Vick"]
+
 OWNER = config.OWNER_ID
 
 
