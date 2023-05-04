@@ -12,30 +12,9 @@ from Mickey import App
 from Mickey.database import *
 from Mickey.modules.helpers import *
 
-PHOTO = [
-    START_IMG1,
-    START_IMG2,
-    START_IMG3,
-]
 
-EMOJIOS = [
-    "💣",
-    "💥",
-    "🪄",
-    "🧨",
-    "⚡",
-    "🤡",
-    "👻",
-    "🎃",
-    "🎩",
-    "🕊",
-]
 
-STICKER = [
-    STKR1,
-    STKR2,
-    STKR3,
-]
+
 
 
 @App.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
@@ -56,14 +35,14 @@ async def restart(client: App, m: Message):
         await asyncio.sleep(2)
         await umm.delete()
         await m.reply_photo(
-            photo=random.choice(PHOTO),
+            photo=random.choice(IMG),
             caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ {client.me.mention}**\n**➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ]**\n<b>||๏ ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ||</b>""",
             reply_markup=InlineKeyboardMarkup(DEV_OP),
         )
         await add_served_user(m.from_user.id)
     else:
         await m.reply_photo(
-            photo=random.choice(PHOTO),
+            photo=random.choice(IMG),
             caption=START,
             reply_markup=InlineKeyboardMarkup(HELP_START),
         )
@@ -78,14 +57,14 @@ async def restart(client: App, m: Message):
 async def restart(client: App, m: Message):
     if m.chat.type == "private":
         hmm = await m.reply_photo(
-            photo=random.choice(PHOTO),
+            photo=random.choice(IMG),
             caption=HELP_READ,
             reply_markup=InlineKeyboardMarkup(HELP_BTN),
         )
         await add_served_user(m.from_user.id)
     else:
         await m.reply_photo(
-            photo=random.choice(PHOTO),
+            photo=random.choice(IMG),
             caption="**ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!**",
             reply_markup=InlineKeyboardMarkup(HELP_BUTN),
         )
