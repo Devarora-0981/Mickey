@@ -1,18 +1,11 @@
-#Don't remove This Line From Here. Tg: @Dev_Arora_0981 | @DevArora0981
-#Github :- Devarora-0981 | Devarora2604
-import requests
-import random
-import os
-import re
-import asyncio
-import time
-from datetime import datetime
+# Don't remove This Line From Here. Tg: @Dev_Arora_0981 | @DevArora0981
+# Github :- Devarora-0981 | Devarora2604
 
-from pyrogram import Client, filters
-from pyrogram.types import *
-from config import *
 from inline import *
+from pyrogram.types import *
 from read import *
+
+from config import *
 from Mickey import App, vick
 
 
