@@ -49,11 +49,6 @@ BOT_USERNAME = x.me.username
 BOT_MENTION = x.mention
 
 
-
-
-
-
-
 class App(Client):
     def __init__(self):
         super().__init__(
