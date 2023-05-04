@@ -68,3 +68,21 @@ async def restart(client: App, m: Message):
             reply_markup=InlineKeyboardMarkup(HELP_START),
         )
         await add_served_chat(m.chat.id)
+        
+        
+@App..on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
+async def restart(client: App, m: Message):
+    if m.chat.type == "private":
+        hmm = await m.reply_photo(
+            photo=random.choice(PHOTO),
+            caption=HELP_READ,
+            reply_markup=InlineKeyboardMarkup(HELP_BTN),
+        )
+        await add_served_user(m.from_user.id)
+    else:
+        await m.reply_photo(
+            photo=random.choice(PHOTO),
+            caption="**ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!**",
+            reply_markup=InlineKeyboardMarkup(HELP_BUTN),
+        )
+        await add_served_chat(m.chat.id)
