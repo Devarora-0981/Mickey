@@ -77,4 +77,4 @@ async def restart(client: App, m: Message):
             caption=START,
             reply_markup=InlineKeyboardMarkup(HELP_START),
         )
-        await add_served_chat(m.chat.id) import App
+        await add_served_chat(m.chat.id) 
