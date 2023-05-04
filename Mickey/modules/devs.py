@@ -1,7 +1,9 @@
-from Mickey import App, OWNER
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import Message
-from Mickey.databash import get_served_users, get_served_chats
+
+from Mickey import OWNER, App
+from Mickey.databash import get_served_chats, get_served_users
+
 
 @App.on_message(filters.command("stats") & filters.user(OWNER))
 async def get_stats(_, msg: Message):
