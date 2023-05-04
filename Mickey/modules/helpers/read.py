@@ -1,5 +1,5 @@
+from config import OWNER_USERNAME, SUPPORT_GRP
 from Mickey import BOT_NAME, BOT_USERNAME
-from config import SUPPORT_GRP, OWNER_USERNAME
 
 START = f"""
 **๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](t.me/{BOT_USERNAME})**
@@ -46,4 +46,3 @@ ABOUT_READ = f"""
 **──────────────**
 **➻ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ғᴏʀ ɢᴇᴛᴛɪɴɢ ʙᴀsɪᴄ ʜᴇʟᴩ ᴀɴᴅ ɪɴғᴏ ᴀʙᴏᴜᴛ [{BOT_NAME}](https://t.me/{BOT_USERNAME})**
 """
-
