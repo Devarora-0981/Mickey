@@ -74,9 +74,9 @@ async def repo(_, m: Message):
         reply_markup=InlineKeyboardMarkup(CLOSE_BTN),
         disable_web_page_preview=True,
     )
-    
+
+
 @App.on_message(filters.new_chat_members)
 async def welcome(_, m: Message):
     for member in m.new_chat_members:
-        await m.reply_photo(photo = random.choice(IMG),
-                                  caption = START)    
+        await m.reply_photo(photo=random.choice(IMG), caption=START)
