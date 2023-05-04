@@ -68,9 +68,13 @@ async def restart(client: App, m: Message):
             reply_markup=InlineKeyboardMarkup(HELP_START),
         )
         await add_served_chat(m.chat.id)
-        
-        
-@App.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]))
+
+
+@App.on_message(
+    filters.command(
+        ["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]
+    )
+)
 async def restart(client: App, m: Message):
     if m.chat.type == "private":
         hmm = await m.reply_photo(
