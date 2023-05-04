@@ -1,8 +1,9 @@
 from typing import Callable
-from pyrogram.enums import ChatMemberStatus
-from pyrogram.types import Message, InlineKeyboardButton
 
-from Mickey import App, OWNER
+from pyrogram.enums import ChatMemberStatus
+from pyrogram.types import Message
+
+from Mickey import OWNER, App
 
 
 def is_admins(func: Callable) -> Callable:

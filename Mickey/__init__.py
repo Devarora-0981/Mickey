@@ -1,15 +1,15 @@
+import asyncio
+import importlib
+import logging
 import re
 import sys
 import time
-import logging
-import asyncio
-import importlib
-from pyrogram import Client
+
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
+from pyrogram import Client
 
 import config
 from Mickey.modules import all_modules
-
 
 logging.basicConfig(
     format="[%(asctime)s - %(levelname)s] - %(name)s - %(message)s",
@@ -43,4 +43,3 @@ class App(Client):
 
     async def stop(self):
         await super().stop()
-

@@ -1,26 +1,16 @@
+# Don't remove This Line From Here. Tg: @Dev_Arora_0981 | @DevArora0981
+# Github :- Devarora-0981 | Devarora2604
 
-
-#Don't remove This Line From Here. Tg: @Dev_Arora_0981 | @DevArora0981
-#Github :- Devarora-0981 | Devarora2604
-
-import requests
-import random
-import os
-import re
 import asyncio
-import time
-from datetime import datetime
+import random
+
 from pyrogram import filters
 from pyrogram.types import *
+
 from config import *
-from Mickey.modules.helpers import *
-from Mickey.database import *
 from Mickey import App
-from pymongo import MongoClient
-from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
-
-
-
+from Mickey.database import *
+from Mickey.modules.helpers import *
 
 PHOTO = [
     START_IMG1,
@@ -28,23 +18,23 @@ PHOTO = [
     START_IMG3,
 ]
 
-EMOJIOS = [ 
-      "💣",
-      "💥",
-      "🪄",
-      "🧨",
-      "⚡",
-      "🤡",
-      "👻",
-      "🎃",
-      "🎩",
-      "🕊",
+EMOJIOS = [
+    "💣",
+    "💥",
+    "🪄",
+    "🧨",
+    "⚡",
+    "🤡",
+    "👻",
+    "🎃",
+    "🎩",
+    "🕊",
 ]
-      
+
 STICKER = [
-      STKR1,
-      STKR2,
-      STKR3,
+    STKR1,
+    STKR2,
+    STKR3,
 ]
 
 
@@ -52,7 +42,7 @@ STICKER = [
 async def restart(client: App, m: Message):
     if m.chat.type == "private":
         accha = await m.reply_text(
-            text = random.choice(EMOJIOS),
+            text=random.choice(EMOJIOS),
         )
         await asyncio.sleep(1.3)
         await accha.edit("__ᴅιиg ᴅσиg ꨄ︎ ѕтαятιиg..__")
@@ -66,7 +56,7 @@ async def restart(client: App, m: Message):
         await asyncio.sleep(2)
         await umm.delete()
         await m.reply_photo(
-            photo = random.choice(PHOTO),
+            photo=random.choice(PHOTO),
             caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ {client.me.mention}**\n**➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ]**\n<b>||๏ ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ||</b>""",
             reply_markup=InlineKeyboardMarkup(DEV_OP),
         )
@@ -77,4 +67,4 @@ async def restart(client: App, m: Message):
             caption=START,
             reply_markup=InlineKeyboardMarkup(HELP_START),
         )
-        await add_served_chat(m.chat.id) 
+        await add_served_chat(m.chat.id)
