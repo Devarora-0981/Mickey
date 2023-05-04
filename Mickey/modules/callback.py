@@ -1,10 +1,10 @@
 # Don't remove This Line From Here. Tg: @Dev_Arora_0981 | @DevArora0981
 # Github :- Devarora-0981 | Devarora2604
 
-from inline import *
-from pyrogram.types import *
-from read import *
 
+from pyrogram.types import *
+from Mickey.modules.helpers import *
+from pyrogram.enums import ChatMemberStatus as CMS
 from config import *
 from Mickey import App, vick
 
@@ -19,6 +19,7 @@ async def cb_handler(Client: App, query: CallbackQuery):
         )
     elif query.data == "CLOSE":
         await query.message.delete()
+        await query.answer("ᴄʟᴏsᴇᴅ ᴍᴇɴᴜ!", show_alert=True)
     elif query.data == "BACK":
         await query.message.edit(
             text=START,
@@ -62,11 +63,14 @@ async def cb_handler(Client: App, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(HELP_BTN),
         )
     elif query.data == "addchat":
-        if query.from_user.id not in (await is_admins(query.message.chat.id)):
-            return query.answer(
-                "You don't have permissions to do this baby.",
+        user_id = query.from_user.id
+        user_status = (await query.message.chat.get_member(user_id)).status
+        if user_status not in {CMS.OWNER, CMS.ADMINISTRATOR}:
+            await q.answer(
+                "ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴇᴠᴇɴ ᴀɴ ᴀᴅᴍɪɴ, ᴅᴏɴ'ᴛ ᴛʀʏ ᴛʜɪs ᴇxᴘʟᴏsɪᴠᴇ sʜɪᴛ!",
                 show_alert=True,
             )
+            return
         else:
             is_vick = vick.find_one({"chat_id": query.message.chat.id})
             if not is_vick:
@@ -77,11 +81,14 @@ async def cb_handler(Client: App, query: CallbackQuery):
                     f"**ᴄʜᴀᴛ-ʙᴏᴛ ᴇɴᴀʙʟᴇᴅ ʙʏ** {query.from_user.mention}."
                 )
     elif query.data == "rmchat":
-        if query.from_user.id not in (await is_admins(query.message.chat.id)):
-            return query.answer(
-                "**ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍs ᴛᴏ ᴅᴏ ᴛʜɪs ʙᴀʙʏ!**",
+        user_id = query.from_user.id
+        user_status = (await query.message.chat.get_member(user_id)).status
+        if user_status not in {CMS.OWNER, CMS.ADMINISTRATOR}:
+            await q.answer(
+                "ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴇᴠᴇɴ ᴀɴ ᴀᴅᴍɪɴ, ᴅᴏɴ'ᴛ ᴛʀʏ ᴛʜɪs ᴇxᴘʟᴏsɪᴠᴇ sʜɪᴛ!",
                 show_alert=True,
             )
+            return
         else:
             is_vick = vick.find_one({"chat_id": query.message.chat.id})
             if not is_vick:
