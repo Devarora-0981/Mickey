@@ -6,8 +6,9 @@ import sys
 import time
 
 from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
-from pyrogram import Client
 from pymongo import MongoClient
+from pyrogram import Client
+
 import config
 from Mickey.modules import all_modules
 
