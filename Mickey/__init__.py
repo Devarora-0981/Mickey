@@ -28,7 +28,7 @@ db = mongo.Anonymous
 OWNER = config.OWNER_ID
 
 
-class Anony(Client):
+class App(Client):
     def __init__(self):
         super().__init__(
             name="Mickey",
