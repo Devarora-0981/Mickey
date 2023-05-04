@@ -1,5 +1,6 @@
 # Don't remove This Line From Here. Tg: @Dev_Arora_0981 | @DevArora0981
 # Github :- Devarora-0981 | Devarora2604
+
 import random
 
 from pymongo import MongoClient
@@ -7,14 +8,14 @@ from pyrogram import Client, filters
 from pyrogram.types import *
 
 from config import *
-from Mickey import App
+from Mickey import App, BOT_USERNAME
 from Mickey.modules.helpers import *
 
 
 @App.on_message(
     filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"]) & ~filters.private
 )
-async def chatonoff(client: Client, message: Message):
+async def chaton_off(client: Client, message: Message):
     if not message.from_user:
         return
     else:
@@ -30,9 +31,9 @@ async def chatonoff(client: Client, message: Message):
 
 
 @App.on_message(
-    (filters.text | filters.sticker) & ~filters.private & ~filters.App,
+    (filters.text | filters.sticker) & ~filters.private & ~filters.bot,
 )
-async def vickai(client: Client, message: Message):
+async def chatbot_text(client: Client, message: Message):
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
 
@@ -110,9 +111,9 @@ async def vickai(client: Client, message: Message):
 
 
 @App.on_message(
-    (filters.sticker | filters.text) & ~filters.private & ~filters.App,
+    (filters.sticker | filters.text) & ~filters.private & ~filters.bot,
 )
-async def vickstickerai(client: Client, message: Message):
+async def chatbot_sticker(client: Client, message: Message):
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
 
@@ -192,9 +193,9 @@ async def vickstickerai(client: Client, message: Message):
 
 
 @App.on_message(
-    (filters.text | filters.sticker) & filters.private & ~filters.App,
+    (filters.text | filters.sticker) & filters.private & ~filters.bot,
 )
-async def vickprivate(client: Client, message: Message):
+async def chatbot_pvt(client: Client, message: Message):
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
     if not message.reply_to_message:
@@ -229,9 +230,9 @@ async def vickprivate(client: Client, message: Message):
 
 
 @App.on_message(
-    (filters.sticker | filters.text) & filters.private & ~filters.App,
+    (filters.sticker | filters.text) & filters.private & ~filters.bot,
 )
-async def vickprivatesticker(client: Client, message: Message):
+async def chatbot_sticker_pvt(client: Client, message: Message):
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
     if not message.reply_to_message:
