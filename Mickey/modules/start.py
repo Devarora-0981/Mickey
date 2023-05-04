@@ -14,7 +14,7 @@ from Mickey.modules.helpers import *
 
 
 @App.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
-async def restart(client: App, m: Message):
+async def start(client: App, m: Message):
     if m.chat.type == "private":
         accha = await m.reply_text(
             text=random.choice(EMOJIOS),
@@ -50,7 +50,7 @@ async def restart(client: App, m: Message):
         ["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]
     )
 )
-async def restart(client: App, m: Message):
+async def help(client: App, m: Message):
     if m.chat.type == "private":
         hmm = await m.reply_photo(
             photo=random.choice(IMG),
@@ -65,3 +65,11 @@ async def restart(client: App, m: Message):
             reply_markup=InlineKeyboardMarkup(HELP_BUTN),
         )
         await add_served_chat(m.chat.id)
+
+@App.on_message(filters.command("repo"))
+async def repo(_, m: Message):
+    await m.reply_text(
+       text=SOURCE_READ,
+       reply_markup=InlineKeyboardMarkup(CLOSE_BTN),
+       disable_web_page_preview=True,
+    )
