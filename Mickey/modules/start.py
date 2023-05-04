@@ -13,10 +13,6 @@ from Mickey.database import *
 from Mickey.modules.helpers import *
 
 
-
-
-
-
 @App.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
 async def restart(client: App, m: Message):
     if m.chat.type == "private":
