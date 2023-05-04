@@ -1,14 +1,13 @@
 # Don't remove This Line From Here. Tg: @Dev_Arora_0981 | @DevArora0981
 # Github :- Devarora-0981 | Devarora2604
+
 import random
 from datetime import datetime
 
-from inline import *
 from pyrogram import filters
 from pyrogram.types import *
-from read import *
 
-from config import OWNER_USERNAME
+from config import *
 from Mickey import App
 from Mickey.database import *
 from Mickey.modules.helpers import *
@@ -26,7 +25,7 @@ async def ping(client: App, message: Message):
     ms = (datetime.now() - start).microseconds / 1000
     me = await client.get_me()
     await message.reply_photo(
-        photo=random.choice(PHOTO),
+        photo=random.choice(IMG),
         caption=f"нey вαву!!\n**[{me.first_name}](t.me/{me.username})** ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>||мαdє ωιтн ❣️ ву [ᴅᴇᴠᴇʟᴏᴘᴇʀ](https://t.me/{OWNER_USERNAME})||</b>",
         reply_markup=InlineKeyboardMarkup(PNG_BTN),
     )
