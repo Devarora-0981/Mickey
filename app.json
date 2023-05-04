@@ -1,0 +1,42 @@
+{
+  "name": "Mickey Bot",
+  "description": "A telegram bot",
+  "logo": "https://te.legra.ph/file/dc32c85de4f1ad9b3456b.jpg",
+  "keywords": [
+    "Chatbot",
+    "mongodb",
+    "python",
+    "pyrogram"
+  ],
+    "buildpacks": [{
+    "url": "heroku/python"
+  }],
+  "repository": "https://github.com/Devarora-0981/Mickey",
+  "env": {
+    "API_ID": {
+      "description": "Get this value from my.telegram.org/apps.",
+      "required": true,
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org/apps.",
+      "required": true,
+      "value": ""
+    },
+    "BOT_TOKEN": {
+      "description": "A Bot token from @BotFather",
+      "required": true,
+      "value": ""
+    },
+    "MONGO_URL": {
+      "description": "Get a mongodb url from https://cloud.mongodb.com.",
+      "required": true,
+      "value": ""
+    },
+    "OWNER_ID": {
+      "description": "User id of the user who will known as owner of the bot.",
+      "required": true,
+      "value": ""
+    }
+  }
+}
