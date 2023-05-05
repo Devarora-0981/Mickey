@@ -39,7 +39,7 @@ class MickeyBot(Client):
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
-            plugins=dict(root="Mickey.modules"),
+            in_memory=True,
         )
 
     async def start(self):
