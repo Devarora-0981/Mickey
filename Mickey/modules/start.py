@@ -48,7 +48,7 @@ async def start(_, m: Message):
 
 @app.on_message(
     filters.command(
-        ["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]
+        ["help"], prefixes=["+", ".", "/", "-", "?", "$"]
     )
 )
 async def help(client: app, m: Message):
