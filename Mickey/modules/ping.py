@@ -8,13 +8,13 @@ from pyrogram import filters
 from pyrogram.types import *
 
 from config import *
-from Mickey import App
+from Mickey import app
 from Mickey.database import *
 from Mickey.modules.helpers import *
 
 
-@App.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
-async def ping(client: App, message: Message):
+@app.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
+async def ping(client: app, message: Message):
     if message.chat.type == "private":
         await add_served_user(message.from_user.id)
     else:

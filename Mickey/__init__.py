@@ -54,4 +54,4 @@ class MickeyBot(Client):
         await super().stop()
 
 
-App = MickeyBot()
+app = MickeyBot()
