@@ -8,7 +8,7 @@ from io import StringIO
 from time import time
 
 from Hamker import OWNER
-from Hamker import App as Anony
+from Hamker import app as Anony
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
