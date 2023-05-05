@@ -19,9 +19,7 @@ async def chaton_off(client: Client, message: Message):
     if not message.from_user:
         return
     else:
-        user = message.from_user.id
-        chat_id = message.chat.id
-        if user not in (await is_admins(chat_id)):
+        if message.from_user.id not in (await is_admins(message.chat.id)):
             return await message.reply_text("**ʏᴏᴜ ᴀʀᴇ'ɴᴛ ᴀɴ ᴀᴅᴍɪɴ.**")
         else:
             await message.reply_text(
@@ -61,9 +59,7 @@ async def chatbot_text(client: Client, message: Message):
         vickdb = MongoClient(MONGO_URL)
         vick = vickdb["VickDb"]["Vick"]
         is_vick = vick.find_one({"chat_id": message.chat.id})
-        getme = await app.get_me()
-        bot_id = getme.id
-        if message.reply_to_message.from_user.id == bot_id:
+        if message.reply_to_message.from_user.id == app.id:
             if not is_vick:
                 await app.send_chat_action(message.chat.id, "typing")
                 K = []
@@ -79,7 +75,7 @@ async def chatbot_text(client: Client, message: Message):
                         await message.reply_sticker(f"{hey}")
                     if not Yo == "sticker":
                         await message.reply_text(f"{hey}")
-        if not message.reply_to_message.from_user.id == bot_id:
+        if not message.reply_to_message.from_user.id == app.id:
             if message.sticker:
                 is_chat = chatai.find_one(
                     {
@@ -141,9 +137,7 @@ async def chatbot_sticker(client: Client, message: Message):
         vickdb = MongoClient(MONGO_URL)
         vick = vickdb["VickDb"]["Vick"]
         is_vick = vick.find_one({"chat_id": message.chat.id})
-        getme = await app.get_me()
-        bot_id = getme.id
-        if message.reply_to_message.from_user.id == bot_id:
+        if message.reply_to_message.from_user.id == app.id:
             if not is_vick:
                 await app.send_chat_action(message.chat.id, "typing")
                 K = []
@@ -159,7 +153,7 @@ async def chatbot_sticker(client: Client, message: Message):
                         await message.reply_text(f"{hey}")
                     if not Yo == "text":
                         await message.reply_sticker(f"{hey}")
-        if not message.reply_to_message.from_user.id == bot_id:
+        if not message.reply_to_message.from_user.id == app.id:
             if message.text:
                 is_chat = chatai.find_one(
                     {
@@ -212,9 +206,7 @@ async def chatbot_pvt(client: Client, message: Message):
         if not Yo == "sticker":
             await message.reply_text(f"{hey}")
     if message.reply_to_message:
-        getme = await app.get_me()
-        bot_id = getme.id
-        if message.reply_to_message.from_user.id == bot_id:
+        if message.reply_to_message.from_user.id == app.id:
             await app.send_chat_action(message.chat.id, "typing")
             K = []
             is_chat = chatai.find({"word": message.text})
@@ -249,9 +241,7 @@ async def chatbot_sticker_pvt(client: Client, message: Message):
         if not Yo == "text":
             await message.reply_sticker(f"{hey}")
     if message.reply_to_message:
-        getme = await app.get_me()
-        bot_id = getme.id
-        if message.reply_to_message.from_user.id == bot_id:
+        if message.reply_to_message.from_user.id == app.id:
             await app.send_chat_action(message.chat.id, "typing")
             K = []
             is_chat = chatai.find({"word": message.sticker.file_unique_id})
