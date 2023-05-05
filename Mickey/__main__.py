@@ -8,11 +8,7 @@ from Mickey.modules import all_modules
 
 
 async def dev_boot():
-    try:
-        await app.start()
-    except Exception as ex:
-        LOGGER.error(ex)
-        quit(1)
+    await app.start()
     for mod in await all_modules():
         importlib.import_module(f"Mickey.modules.{mod}")
     LOGGER.info("Mickey Chat Bot Started.")
