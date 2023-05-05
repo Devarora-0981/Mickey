@@ -1,7 +1,7 @@
 from pyrogram.types import *
 
 from config import SUPPORT_GRP, UPDATE_CHNL
-from Mickey import App, OWNER
+from Mickey import OWNER, App
 
 DEV_OP = [
     [
