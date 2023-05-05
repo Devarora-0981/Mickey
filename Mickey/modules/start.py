@@ -46,11 +46,7 @@ async def start(_, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@app.on_message(
-    filters.command(
-        ["help"], prefixes=["+", ".", "/", "-", "?", "$"]
-    )
-)
+@app.on_message(filters.command(["help"], prefixes=["+", ".", "/", "-", "?", "$"]))
 async def help(client: app, m: Message):
     if m.chat.type == "private":
         hmm = await m.reply_photo(
