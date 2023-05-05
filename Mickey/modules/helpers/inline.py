@@ -11,7 +11,7 @@ DEV_OP = [
     [
         InlineKeyboardButton(
             text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸",
-            url="https://t.me/{app.username}?startgroup=true",
+            url=f"https://t.me/{app.username}?startgroup=true",
         ),
     ],
     [
