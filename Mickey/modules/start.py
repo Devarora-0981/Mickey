@@ -5,6 +5,7 @@ import asyncio
 import random
 
 from pyrogram import filters
+from pyrogram.enums import ChatType
 from pyrogram.types import *
 
 from config import *
@@ -13,9 +14,9 @@ from Mickey.database import *
 from Mickey.modules.helpers import *
 
 
-@app.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
-async def start(client: app, m: Message):
-    if m.chat.type == "private":
+@app.on_message(filters.command(["start", "aistart"]))
+async def start(_, m: Message):
+    if m.chat.type == ChatType.PRIVATE:
         accha = await m.reply_text(
             text=random.choice(EMOJIOS),
         )
@@ -32,7 +33,7 @@ async def start(client: app, m: Message):
         await umm.delete()
         await m.reply_photo(
             photo=random.choice(IMG),
-            caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ {client.me.mention}**\n**➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ]**\n<b>||๏ ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ||</b>""",
+            caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ {app.name}**\n**➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ]**\n<b>||๏ ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ||</b>""",
             reply_markup=InlineKeyboardMarkup(DEV_OP),
         )
         await add_served_user(m.from_user.id)
