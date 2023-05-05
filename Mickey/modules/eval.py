@@ -7,9 +7,10 @@ from inspect import getfullargspec
 from io import StringIO
 from time import time
 
-from Mickey import app, OWNER
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+
+from Mickey import OWNER, app
 
 
 async def aexec(code, client, message):
