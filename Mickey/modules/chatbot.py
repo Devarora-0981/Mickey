@@ -8,14 +8,12 @@ from pyrogram import Client, filters
 from pyrogram.types import *
 
 from config import *
-from Mickey import BOT_USERNAME, app
+from Mickey import app
 from Mickey.modules.helpers import *
 
 
-@app.on_message(
-    filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"]) & ~filters.private
-)
-async def chaton_off(client: Client, message: Message):
+@app.on_message(filters.command(["chatbot"]) & ~filters.private)
+async def chaton_off(_, message: Message):
     if not message.from_user:
         return
     else:
