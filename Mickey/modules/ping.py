@@ -5,7 +5,7 @@ import random
 from datetime import datetime
 
 from pyrogram import filters
-frpm pyrogram.enums import ChatType
+from pyrogram.enums import ChatType
 from pyrogram.types import *
 
 from config import *
