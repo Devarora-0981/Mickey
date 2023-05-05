@@ -10,7 +10,7 @@ from pymongo import MongoClient
 from pyrogram import Client
 
 import config
-from Mickey.modules import all_modules
+
 
 logging.basicConfig(
     format="[%(asctime)s - %(levelname)s] - %(name)s - %(message)s",
