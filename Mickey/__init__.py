@@ -33,23 +33,7 @@ vick = vickdb["VickDb"]["Vick"]
 OWNER = config.OWNER_ID
 
 
-bot = Client(
-    "Dev",
-    bot_token=config.BOT_TOKEN,
-    api_id=config.API_ID,
-    api_hash=config.API_HASH,
-)
-
-bot.start()
-
-BOT_ID = config.BOT_TOKEN.split(":")[0]
-x = bot.get_me()
-BOT_NAME = x.first_name + (x.last_name or "")
-BOT_USERNAME = x.username
-BOT_MENTION = x.mention
-
-
-class App(Client):
+class Mickey(Client):
     def __init__(self):
         super().__init__(
             name="Mickey",
@@ -61,6 +45,13 @@ class App(Client):
 
     async def start(self):
         await super().start()
+        get_me = await self.get_me()
+        self.id = get_me.id
+        self.name = get_me.mention
+        self.username = get_me.username
 
     async def stop(self):
         await super().stop()
+
+
+app = Mickey()
