@@ -11,5 +11,5 @@ async def get_stats(_, msg: Message):
     chats = len(await get_served_chats())
     await msg.reply_photo(
         photo="https://te.legra.ph/file/2d5b054acddf865d4d83e.png",
-        caption=f"ᴛᴏᴛᴀʟ sᴛᴀᴛs ᴏғ {BOT_NAME}\n\n➻ **ᴄʜᴀᴛs :** {chats}\n➻ **ᴜsᴇʀs :** {users}",
+        caption=f"ᴛᴏᴛᴀʟ sᴛᴀᴛs ᴏғ {app.name}\n\n➻ **ᴄʜᴀᴛs :** {chats}\n➻ **ᴜsᴇʀs :** {users}",
     )
