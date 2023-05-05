@@ -45,7 +45,7 @@ bot.start()
 BOT_ID = config.BOT_TOKEN.split(":")[0]
 x = bot.get_me()
 BOT_NAME = x.first_name + (x.last_name or "")
-BOT_USERNAME = x.me.username
+BOT_USERNAME = x.username
 BOT_MENTION = x.mention
 
 
