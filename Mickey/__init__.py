@@ -27,7 +27,7 @@ boot = time.time()
 mongo = MongoCli(config.MONGO_URL)
 db = mongo.Anonymous
 
-vickdb = MongoClient(MONGO_URL)
+vickdb = MongoClient(config.MONGO_URL)
 vick = vickdb["VickDb"]["Vick"]
 
 OWNER = config.OWNER_ID
