@@ -8,13 +8,13 @@ from pyrogram import filters
 from pyrogram.types import *
 
 from config import *
-from Mickey import App
+from Mickey import app
 from Mickey.database import *
 from Mickey.modules.helpers import *
 
 
-@App.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
-async def start(client: App, m: Message):
+@app.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
+async def start(client: app, m: Message):
     if m.chat.type == "private":
         accha = await m.reply_text(
             text=random.choice(EMOJIOS),
@@ -45,12 +45,12 @@ async def start(client: App, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@App.on_message(
+@app.on_message(
     filters.command(
         ["help", f"help@{BOT_USERNAME}"], prefixes=["+", ".", "/", "-", "?", "$"]
     )
 )
-async def help(client: App, m: Message):
+async def help(client: app, m: Message):
     if m.chat.type == "private":
         hmm = await m.reply_photo(
             photo=random.choice(IMG),
@@ -67,7 +67,7 @@ async def help(client: App, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@App.on_message(filters.command("repo"))
+@app.on_message(filters.command("repo"))
 async def repo(_, m: Message):
     await m.reply_text(
         text=SOURCE_READ,
@@ -76,7 +76,7 @@ async def repo(_, m: Message):
     )
 
 
-@App.on_message(filters.new_chat_members)
+@app.on_message(filters.new_chat_members)
 async def welcome(_, m: Message):
     for member in m.new_chat_members:
         await m.reply_photo(photo=random.choice(IMG), caption=START)

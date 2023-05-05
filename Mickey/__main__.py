@@ -3,13 +3,13 @@ import importlib
 
 from pyrogram import idle
 
-from Mickey import LOGGER, App
+from Mickey import LOGGER, app
 from Mickey.modules import all_modules
 
 
 async def dev_boot():
     try:
-        await App.start()
+        await app.start()
     except Exception as ex:
         LOGGER.error(ex)
         quit(1)

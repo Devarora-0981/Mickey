@@ -3,11 +3,11 @@ from typing import Callable
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import Message
 
-from Mickey import OWNER, App
+from Mickey import OWNER, app
 
 
 def is_admins(func: Callable) -> Callable:
-    async def non_admin(c: App, m: Message):
+    async def non_admin(c: app, m: Message):
         if m.from_user.id == OWNER:
             return await func(c, m)
 

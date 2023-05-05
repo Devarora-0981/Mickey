@@ -6,12 +6,12 @@ from pyrogram.enums import ChatMemberStatus as CMS
 from pyrogram.types import *
 
 from config import *
-from Mickey import App, vick
+from Mickey import app, vick
 from Mickey.modules.helpers import *
 
 
-@App.on_callback_query()
-async def cb_handler(Client: App, query: CallbackQuery):
+@app.on_callback_query()
+async def cb_handler(_, query: CallbackQuery):
     if query.data == "HELP":
         await query.message.edit_text(
             text=HELP_READ,
