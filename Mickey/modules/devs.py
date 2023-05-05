@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from Mickey import OWNER, app
-from Mickey.databash import get_served_chats, get_served_users
+from Mickey.database import get_served_chats, get_served_users
 
 
 @app.on_message(filters.command("stats") & filters.user(OWNER))
