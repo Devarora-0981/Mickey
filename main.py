@@ -105,7 +105,7 @@ async def add_served_chat(chat_id: int):
     return await chatsdb.insert_one({"chat_id": chat_id})
 
 @bot.on_message(filters.command(["start", "aistart", f"start@{BOT_USERNAME}"]))
-async def restart(client: Client, m: Message):
+async def restart(client, m: Message):
     if m.chat.type == "private":
         accha = await m.reply_text(
             text = random.choice(EMOJIOS),
