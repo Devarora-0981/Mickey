@@ -54,4 +54,4 @@ class Mickey(Client):
         await super().stop()
 
 
-app = Mickey()
+App = Mickey()
