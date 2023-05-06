@@ -32,7 +32,7 @@ vick = vickdb["VickDb"]["Vick"]
 OWNER = config.OWNER_ID
 
 
-class MickeyBot(Client):
+class app(Client):
     def __init__(self):
         super().__init__(
             name="Mickey",
@@ -53,4 +53,4 @@ class MickeyBot(Client):
         await super().stop()
 
 
-app = MickeyBot()
+# app = MickeyBot()
