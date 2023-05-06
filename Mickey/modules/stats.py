@@ -1,7 +1,4 @@
-import asyncio
-
 from pyrogram import filters
-from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
 from Mickey import OWNER, MickeyBot
@@ -19,5 +16,3 @@ async def stats(cli: MickeyBot, message: Message):
 ➻ **ᴄʜᴀᴛs :** {chats}
 ➻ **ᴜsᴇʀs :** {users}"""
     )
-
-
