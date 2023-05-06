@@ -5,8 +5,9 @@ import random
 
 from pymongo import MongoClient
 from pyrogram import filters
-from pyrogram.types import Message
 from pyrogram.enums import ChatAction
+from pyrogram.types import Message
+
 from config import MONGO_URL
 from Mickey import MickeyBot
 from Mickey.modules.helpers import is_admins
