@@ -10,8 +10,6 @@ from pyrogram.types import *
 
 from config import EMOJIOS, IMG
 from Mickey import MickeyBot
-from Mickey.database.chats import get_served_chats
-from Mickey.database.users import get_served_users
 from Mickey.modules.helpers import *
 
 
