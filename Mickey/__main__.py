@@ -1,4 +1,4 @@
-from Mickey import app, LOGGER
+from Mickey import LOGGER, app
 
 # from Mickey.modules import all_modules
 
