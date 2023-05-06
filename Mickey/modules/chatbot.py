@@ -6,7 +6,7 @@ import random
 from pymongo import MongoClient
 from pyrogram import filters
 from pyrogram.types import Message
-
+from pyrogram.enums import ChatAction
 from config import MONGO_URL
 from Mickey import MickeyBot
 from Mickey.modules.helpers import is_admins
@@ -138,7 +138,7 @@ async def chatbot_sticker(client: MickeyBot, message: Message):
         vick = vickdb["VickDb"]["Vick"]
         is_vick = vick.find_one({"chat_id": message.chat.id})
         if not is_vick:
-            await MickeyBot.send_chat_action(message.chat.id, "typing")
+            await MickeyBot.send_chat_action(message.chat.id, ChatAction.TYPING)
             K = []
             is_chat = chatai.find({"word": message.sticker.file_unique_id})
             k = chatai.find_one({"word": message.text})
@@ -159,7 +159,7 @@ async def chatbot_sticker(client: MickeyBot, message: Message):
         is_vick = vick.find_one({"chat_id": message.chat.id})
         if message.reply_to_message.from_user.id == MickeyBot.id:
             if not is_vick:
-                await MickeyBot.send_chat_action(message.chat.id, "typing")
+                await MickeyBot.send_chat_action(message.chat.id, ChatAction.TYPING)
                 K = []
                 is_chat = chatai.find({"word": message.text})
                 k = chatai.find_one({"word": message.text})
@@ -224,7 +224,7 @@ async def chatbot_pvt(client: MickeyBot, message: Message):
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
     if not message.reply_to_message:
-        await MickeyBot.send_chat_action(message.chat.id, "typing")
+        await MickeyBot.send_chat_action(message.chat.id, ChatAction.TYPING)
         K = []
         is_chat = chatai.find({"word": message.text})
         for x in is_chat:
@@ -238,7 +238,7 @@ async def chatbot_pvt(client: MickeyBot, message: Message):
             await message.reply_text(f"{hey}")
     if message.reply_to_message:
         if message.reply_to_message.from_user.id == MickeyBot.id:
-            await MickeyBot.send_chat_action(message.chat.id, "typing")
+            await MickeyBot.send_chat_action(message.chat.id, ChatAction.TYPING)
             K = []
             is_chat = chatai.find({"word": message.text})
             for x in is_chat:
@@ -270,7 +270,7 @@ async def chatbot_sticker_pvt(client: MickeyBot, message: Message):
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
     if not message.reply_to_message:
-        await MickeyBot.send_chat_action(message.chat.id, "typing")
+        await MickeyBot.send_chat_action(message.chat.id, ChatAction.TYPING)
         K = []
         is_chat = chatai.find({"word": message.sticker.file_unique_id})
         for x in is_chat:
@@ -284,7 +284,7 @@ async def chatbot_sticker_pvt(client: MickeyBot, message: Message):
             await message.reply_sticker(f"{hey}")
     if message.reply_to_message:
         if message.reply_to_message.from_user.id == MickeyBot.id:
-            await MickeyBot.send_chat_action(message.chat.id, "typing")
+            await MickeyBot.send_chat_action(message.chat.id, ChatAction.TYPING)
             K = []
             is_chat = chatai.find({"word": message.sticker.file_unique_id})
             for x in is_chat:
