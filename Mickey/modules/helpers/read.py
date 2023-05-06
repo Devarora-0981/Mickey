@@ -1,5 +1,5 @@
 from config import OWNER_USERNAME, SUPPORT_GRP
-from Mickey import MickeyBot, BOT_USERNAME, BOT_NAME
+from Mickey import BOT_NAME, BOT_USERNAME
 
 START = f"""
 **๏ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](t.me/{BOT_USERNAME})**
