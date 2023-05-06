@@ -43,7 +43,7 @@ app.start()
 
 BOT_ID = config.BOT_TOKEN.split(":")[0]
 x = bot.get_me()
-# BOT_NAME = 
+# BOT_NAME =
 BOT_USERNAME = x.username
 
 
@@ -55,7 +55,7 @@ class app(Client):
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
             in_memory=True,
-           # plugins=dict(root="Mickey.modules"),
+            # plugins=dict(root="Mickey.modules"),
         )
 
     async def start(self):
