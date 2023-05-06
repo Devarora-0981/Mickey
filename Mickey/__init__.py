@@ -18,7 +18,7 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-logging.getLogger("pyrogram").setLevel(logging.ERROR)
+# logging.getLogger("pyrogram").setLevel(logging.ERROR)
 LOGGER = logging.getLogger(__name__)
 
 
