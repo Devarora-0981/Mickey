@@ -5,7 +5,7 @@
 from pyrogram.enums import ChatMemberStatus as CMS
 from pyrogram.types import InlineKeyboardMarkup
 
-from Mickey import Mickey
+from Mickey import MickeyBot
 from Mickey.database import vick
 from Mickey.modules.helpers import (
     ABOUT_BTN,
@@ -24,7 +24,7 @@ from Mickey.modules.helpers import (
 )
 
 
-@Mickey.on_callback_query()
+@MickeyBot.on_callback_query()
 async def cb_handler(_, query: CallbackQuery):
     if query.data == "HELP":
         await query.message.edit_text(
