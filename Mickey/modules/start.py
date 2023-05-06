@@ -6,21 +6,13 @@ import random
 
 from pyrogram import filters
 from pyrogram.enums import ChatType
-from pyrogram.types import *
+from pyrogram.types import InlineKeyboardMarkup
 
 from config import EMOJIOS, IMG, STICKER
 from Mickey import BOT_NAME, MickeyBot
 from Mickey.database.chats import add_served_chat
 from Mickey.database.users import add_served_user
-from Mickey.modules.helpers import (
-    DEV_OP,
-    HELP_BTN,
-    HELP_BUTN,
-    HELP_READ,
-    HELP_START,
-    SOURCE_READ,
-    START,
-)
+from Mickey.modules.helpers import DEV_OP, HELP_START, HELP_BTN, HELP_BUTN, START, HELP_READ, SOURCE_READ
 
 
 @MickeyBot.on_message(filters.command(["start", "aistart"]))
@@ -59,7 +51,7 @@ async def start(_, m: Message):
     filters.command(["help"], prefixes=["+", ".", "/", "-", "?", "$"])
 )
 async def help(client: MickeyBot, m: Message):
-    if m.chat.type == "private":
+    if m.chat.type == ChatType.PRIVATE:
         hmm = await m.reply_photo(
             photo=random.choice(IMG),
             caption=HELP_READ,
