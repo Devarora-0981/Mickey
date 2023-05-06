@@ -6,7 +6,7 @@ import random
 from pymongo import MongoClient
 from pyrogram import filters
 from pyrogram.types import Message
-
+from Mickey.modules.helpers import is_admins
 from config import MONGO_URL
 from Mickey import MickeyBot
 
