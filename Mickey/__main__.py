@@ -1,9 +1,5 @@
-import asyncio
-import importlib
+from Mickey import app
 
-from pyrogram import idle
-
-from Mickey import LOGGER, app
 # from Mickey.modules import all_modules
 
 """
@@ -16,8 +12,7 @@ async def dev_boot():
 """
 
 
-    
 if __name__ == "__main__":
-   # asyncio.get_event_loop().run_until_complete(dev_boot())
-    
+    # asyncio.get_event_loop().run_until_complete(dev_boot())
+
     app().run()
