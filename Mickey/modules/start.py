@@ -9,7 +9,7 @@ from pyrogram.enums import ChatType
 from pyrogram.types import *
 
 from config import EMOJIOS, IMG, STICKER
-from Mickey import MickeyBot, BOT_NAME
+from Mickey import BOT_NAME, MickeyBot
 from Mickey.modules.helpers import *
 
 
