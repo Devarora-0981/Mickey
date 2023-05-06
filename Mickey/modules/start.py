@@ -7,7 +7,8 @@ import random
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import *
-
+from Mickey.database.chats import add_served_chat
+from Mickey.database.users import add_served_user
 from config import EMOJIOS, IMG, STICKER
 from Mickey import BOT_NAME, MickeyBot
 from Mickey.modules.helpers import *
