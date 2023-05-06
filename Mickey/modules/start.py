@@ -7,10 +7,11 @@ import random
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import *
-from config import IMG, EMOJIOS, 
+
+from config import EMOJIOS, IMG
 from Mickey import MickeyBot
 from Mickey.database.chats import get_served_chats
-from Mickey.database.users import get_served_users 
+from Mickey.database.users import get_served_users
 from Mickey.modules.helpers import *
 
 
@@ -46,7 +47,9 @@ async def start(_, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@MickeyBot.on_message(filters.command(["help"], prefixes=["+", ".", "/", "-", "?", "$"]))
+@MickeyBot.on_message(
+    filters.command(["help"], prefixes=["+", ".", "/", "-", "?", "$"])
+)
 async def help(client: MickeyBot, m: Message):
     if m.chat.type == "private":
         hmm = await m.reply_photo(
