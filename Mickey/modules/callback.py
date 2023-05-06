@@ -3,7 +3,7 @@
 
 
 from pyrogram.enums import ChatMemberStatus as CMS
-from pyrogram.types import InlineKeyboardMarkup, CallbackQuery
+from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
 
 from Mickey import MickeyBot
 from Mickey.database import vick
