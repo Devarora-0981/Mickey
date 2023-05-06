@@ -31,17 +31,6 @@ async def chaton_off(_, message: Message):
     (filters.text | filters.sticker) & ~filters.private & ~filters.bot,
 )
 async def chatbot_text(client: MickeyBot, message: Message):
-    try:
-        if (
-            message.text.startswith("!")
-            or message.text.startswith("/")
-            or message.text.startswith("?")
-            or message.text.startswith("@")
-            or message.text.startswith("#")
-        ):
-            return
-    except Exception:
-        pass
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
 
@@ -120,17 +109,6 @@ async def chatbot_text(client: MickeyBot, message: Message):
     (filters.sticker | filters.text) & ~filters.private & ~filters.bot,
 )
 async def chatbot_sticker(client: MickeyBot, message: Message):
-    try:
-        if (
-            message.text.startswith("!")
-            or message.text.startswith("/")
-            or message.text.startswith("?")
-            or message.text.startswith("@")
-            or message.text.startswith("#")
-        ):
-            return
-    except Exception:
-        pass
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
 
@@ -211,17 +189,6 @@ async def chatbot_sticker(client: MickeyBot, message: Message):
     (filters.text | filters.sticker) & filters.private & ~filters.bot,
 )
 async def chatbot_pvt(client: MickeyBot, message: Message):
-    try:
-        if (
-            message.text.startswith("!")
-            or message.text.startswith("/")
-            or message.text.startswith("?")
-            or message.text.startswith("@")
-            or message.text.startswith("#")
-        ):
-            return
-    except Exception:
-        pass
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
     if not message.reply_to_message:
@@ -257,17 +224,6 @@ async def chatbot_pvt(client: MickeyBot, message: Message):
     (filters.sticker | filters.text) & filters.private & ~filters.bot,
 )
 async def chatbot_sticker_pvt(client: MickeyBot, message: Message):
-    try:
-        if (
-            message.text.startswith("!")
-            or message.text.startswith("/")
-            or message.text.startswith("?")
-            or message.text.startswith("@")
-            or message.text.startswith("#")
-        ):
-            return
-    except Exception:
-        pass
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
     if not message.reply_to_message:
