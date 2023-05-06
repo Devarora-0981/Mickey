@@ -8,7 +8,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import *
 
-from config import EMOJIOS, IMG
+from config import EMOJIOS, IMG, STICKER
 from Mickey import MickeyBot
 from Mickey.modules.helpers import *
 
