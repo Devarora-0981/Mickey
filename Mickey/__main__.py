@@ -1,4 +1,4 @@
-from Mickey import app
+from Mickey import app, LOGGER
 
 # from Mickey.modules import all_modules
 
@@ -14,5 +14,5 @@ async def dev_boot():
 
 if __name__ == "__main__":
     # asyncio.get_event_loop().run_until_complete(dev_boot())
-
+    LOGGER.info("Mickey Chat Bot Started.")
     app().run()
