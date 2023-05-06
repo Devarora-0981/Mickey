@@ -40,6 +40,7 @@ class app(Client):
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
             in_memory=True,
+            plugins=dict(root="Mickey.modules"),
         )
 
     async def start(self):
@@ -53,4 +54,4 @@ class app(Client):
         await super().stop()
 
 
-# app = MickeyBot()
+#app = MickeyBot()
