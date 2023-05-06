@@ -27,10 +27,21 @@ async def chaton_off(_, message: Message):
             )
 
 
-@Client.on_message(
+@MickeyBot.on_message(
     (filters.text | filters.sticker) & ~filters.private & ~filters.bot,
 )
 async def chatbot_text(client: Client, message: Message):
+    try:
+        if (
+            message.text.startswith("!")
+            or message.text.startswith("/")
+            or message.text.startswith("?")
+            or message.text.startswith("@")
+            or message.text.startswith("#")
+        ):
+            return
+    except Exception:
+        pass    
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
 
@@ -105,10 +116,21 @@ async def chatbot_text(client: Client, message: Message):
                     )
 
 
-@Client.on_message(
+@MickeyBot.on_message(
     (filters.sticker | filters.text) & ~filters.private & ~filters.bot,
 )
 async def chatbot_sticker(client: Client, message: Message):
+    try:
+        if (
+            message.text.startswith("!")
+            or message.text.startswith("/")
+            or message.text.startswith("?")
+            or message.text.startswith("@")
+            or message.text.startswith("#")
+        ):
+            return
+    except Exception:
+        pass
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
 
@@ -185,10 +207,21 @@ async def chatbot_sticker(client: Client, message: Message):
                     )
 
 
-@Client.on_message(
+@MickeyBot.on_message(
     (filters.text | filters.sticker) & filters.private & ~filters.bot,
 )
 async def chatbot_pvt(client: Client, message: Message):
+    try:
+        if (
+            message.text.startswith("!")
+            or message.text.startswith("/")
+            or message.text.startswith("?")
+            or message.text.startswith("@")
+            or message.text.startswith("#")
+        ):
+            return
+    except Exception:
+        pass
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
     if not message.reply_to_message:
@@ -220,10 +253,21 @@ async def chatbot_pvt(client: Client, message: Message):
                 await message.reply_text(f"{hey}")
 
 
-@Client.on_message(
+@MickeyBot.on_message(
     (filters.sticker | filters.text) & filters.private & ~filters.bot,
 )
 async def chatbot_sticker_pvt(client: Client, message: Message):
+    try:
+        if (
+            message.text.startswith("!")
+            or message.text.startswith("/")
+            or message.text.startswith("?")
+            or message.text.startswith("@")
+            or message.text.startswith("#")
+        ):
+            return
+    except Exception:
+        pass
     chatdb = MongoClient(MONGO_URL)
     chatai = chatdb["Word"]["WordDb"]
     if not message.reply_to_message:
