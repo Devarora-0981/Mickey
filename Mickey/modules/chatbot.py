@@ -60,7 +60,7 @@ async def chatbot_text(client: Client, message: Message):
         is_vick = vick.find_one({"chat_id": message.chat.id})
         if message.reply_to_message.from_user.id == Client.id:
             if not is_vick:
-                await Client.send_chat_action(message.chat.id, "typing")
+                await Client.send_chat_action(message.chat.id, ChatAction.TYPING)
                 K = []
                 is_chat = chatai.find({"word": message.text})
                 k = chatai.find_one({"word": message.text})
