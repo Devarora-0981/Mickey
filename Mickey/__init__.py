@@ -41,6 +41,10 @@ class MickeyBot(Client):
 
     async def start(self):
         await super().start()
+        get_me = await self.get_me()
+        self.id = get_me.id
+        self.name = get_me.mention
+        self.username = get_me.username
 
     async def stop(self):
         await super().stop()
