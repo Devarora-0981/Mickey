@@ -15,16 +15,12 @@ from Mickey.modules.helpers import is_admins
 
 @MickeyBot.on_message(filters.command(["chatbot"]) & filters.group & ~filters.bot)
 @is_admin
-async def chaton_off(_, message: Message):
-    try:
-        await message.delete()
-    except:
-        return
-             await message.reply_text(
-                text="» <u>**ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**</u>",
-                reply_markup=InlineKeyboardMarkup(CHATBOT_ON),
-            )
-
+async def chaton_off(_, m: Message):
+    await m.reply_text(
+        f"ᴄʜᴀᴛ: {m.chat.id}\n**ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**",
+        reply_markup=InlineKeyboardMarkup(CHATBOT_ON),
+    )
+    return
 
 @MickeyBot.on_message(
     (filters.text | filters.sticker | filters.group) & ~filters.bot,
