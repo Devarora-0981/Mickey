@@ -10,7 +10,6 @@ from pyrogram.types import Message
 
 from config import MONGO_URL
 from Mickey import MickeyBot
-from Mickey.modules.helpers import is_admins
 
 
 @MickeyBot.on_message(filters.command(["chatbot"]) & filters.group & ~filters.bot)
@@ -21,6 +20,7 @@ async def chaton_off(_, m: Message):
         reply_markup=InlineKeyboardMarkup(CHATBOT_ON),
     )
     return
+
 
 @MickeyBot.on_message(
     (filters.text | filters.sticker | filters.group) & ~filters.bot,
