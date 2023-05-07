@@ -10,10 +10,10 @@ from pyrogram.types import Message
 
 from config import MONGO_URL
 from Mickey import MickeyBot
-
+from Mickey.modules.helpers import is_admins
 
 @MickeyBot.on_message(filters.command(["chatbot"]) & filters.group & ~filters.bot)
-@is_admin
+@is_admins
 async def chaton_off(_, m: Message):
     await m.reply_text(
         f"ᴄʜᴀᴛ: {m.chat.id}\n**ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**",
