@@ -81,7 +81,7 @@ async def cb_handler(_, query: CallbackQuery):
         user_id = query.from_user.id
         user_status = (await query.message.chat.get_member(user_id)).status
         if user_status not in [CMS.OWNER, CMS.ADMINISTRATOR]:
-            return await q.answer(
+            return await query.answer(
                 "ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴇᴠᴇɴ ᴀɴ ᴀᴅᴍɪɴ, ᴅᴏɴ'ᴛ ᴛʀʏ ᴛʜɪs ᴇxᴘʟᴏsɪᴠᴇ sʜɪᴛ!",
                 show_alert=True,
             )
@@ -98,7 +98,7 @@ async def cb_handler(_, query: CallbackQuery):
         user_id = query.from_user.id
         user_status = (await query.message.chat.get_member(user_id)).status
         if user_status not in [CMS.OWNER, CMS.ADMINISTRATOR]:
-            await q.answer(
+            await query.answer(
                 "ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴇᴠᴇɴ ᴀɴ ᴀᴅᴍɪɴ, ᴅᴏɴ'ᴛ ᴛʀʏ ᴛʜɪs ᴇxᴘʟᴏsɪᴠᴇ sʜɪᴛ!",
                 show_alert=True,
             )
