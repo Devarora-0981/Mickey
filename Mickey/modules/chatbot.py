@@ -12,6 +12,7 @@ from config import MONGO_URL
 from Mickey import MickeyBot
 from Mickey.modules.helpers import is_admins
 
+
 @MickeyBot.on_message(filters.command(["chatbot"]) & filters.group & ~filters.bot)
 @is_admins
 async def chaton_off(_, m: Message):
