@@ -33,7 +33,7 @@ PNG_BTN = [
     [
         InlineKeyboardButton(
             text="✨ ᴄʟᴏsᴇ ✨",
-            callback_data="PCLOSE",
+            callback_data="CLOSE",
         ),
     ],
 ]
