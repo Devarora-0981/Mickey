@@ -27,7 +27,7 @@ async def ping(_, message: Message):
         await message.delete()
     except:
         pass
-    
+
     ms = (datetime.now() - start).microseconds / 1000
     await loda.edit_text(
         text=f"нey вαву!!\n{BOT_NAME} ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>|| мαdє ωιтн ❣️ ву [ᴅᴇᴠ](https://t.me/{OWNER_USERNAME}) ||</b>",
