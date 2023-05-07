@@ -13,7 +13,7 @@ from Mickey import MickeyBot
 from Mickey.modules.helpers import is_admins
 
 
-@MickeyBot.on_message(filters.command(["chatbot"]) & ~filters.private)
+@MickeyBot.on_message(filters.command(["chatbot"]) & filters.group & ~filters.bot)
 async def chaton_off(_, message: Message):
     if not message.from_user:
         return
@@ -28,7 +28,7 @@ async def chaton_off(_, message: Message):
 
 
 @MickeyBot.on_message(
-    (filters.text | filters.sticker) & ~filters.private & ~filters.bot,
+    (filters.text | filters.sticker | filters.group)  & ~filters.bot,
 )
 async def chatbot_text(client: Client, message: Message):
     try:
@@ -117,7 +117,7 @@ async def chatbot_text(client: Client, message: Message):
 
 
 @MickeyBot.on_message(
-    (filters.sticker | filters.text) & ~filters.private & ~filters.bot,
+    (filters.sticker | filters.group | filters.text)  & ~filters.bot,
 )
 async def chatbot_sticker(client: Client, message: Message):
     try:
@@ -208,7 +208,7 @@ async def chatbot_sticker(client: Client, message: Message):
 
 
 @MickeyBot.on_message(
-    (filters.text | filters.sticker) & filters.private & ~filters.bot,
+    (filters.text | filters.sticer | filters.group)  & ~filters.bot,
 )
 async def chatbot_pvt(client: Client, message: Message):
     try:
@@ -254,7 +254,7 @@ async def chatbot_pvt(client: Client, message: Message):
 
 
 @MickeyBot.on_message(
-    (filters.sticker | filters.text) & filters.private & ~filters.bot,
+    (filters.sticker | filters.sticker | filters.group) & ~filters.bot,
 )
 async def chatbot_sticker_pvt(client: Client, message: Message):
     try:
