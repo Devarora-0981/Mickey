@@ -13,10 +13,10 @@ from Mickey import BOT_NAME, MickeyBot, dev
 from Mickey.database.chats import add_served_chat
 from Mickey.database.users import add_served_user
 from Mickey.modules.helpers import (
+    CLOSE_BTN,
     DEV_OP,
     HELP_BTN,
     HELP_BUTN,
-    CLOSE_BTN,
     HELP_READ,
     HELP_START,
     SOURCE_READ,
@@ -56,9 +56,7 @@ async def start(_, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@dev.on_message(
-    filters.command(["help"], prefixes=["+", ".", "/", "-", "?", "$"])
-)
+@dev.on_message(filters.command(["help"], prefixes=["+", ".", "/", "-", "?", "$"]))
 async def help(client: MickeyBot, m: Message):
     if m.chat.type == ChatType.PRIVATE:
         hmm = await m.reply_photo(
