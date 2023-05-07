@@ -17,6 +17,7 @@ from Mickey.modules.helpers import PNG_BTN
 
 @dev.on_message(filters.command("ping", prefixes=["+", "/", "-", "?", "$", "&"]))
 async def ping(_, message: Message):
+    await message.reply_sticker(sticker=random.choice(STICKER))
     start = datetime.now()
     loda = await message.reply_photo(
         photo=random.choice(IMG),
@@ -26,7 +27,7 @@ async def ping(_, message: Message):
         await message.delete()
     except:
         pass
-    await message.reply_sticker(sticker=random.choice(STICKER))
+    
     ms = (datetime.now() - start).microseconds / 1000
     await loda.edit_text(
         text=f"нey вαву!!\n{BOT_NAME} ιѕ alιve 🥀 αnd worĸιng ғιne wιтн a pιng oғ\n➥ `{ms}` ms\n\n<b>|| мαdє ωιтн ❣️ ву [ᴅᴇᴠ](https://t.me/{OWNER_USERNAME}) ||</b>",
