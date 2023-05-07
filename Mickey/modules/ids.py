@@ -1,5 +1,5 @@
 from pyrogram import filters
-
+from pyrogram.enums import ParseMode
 from Mickey import dev
 
 
@@ -35,7 +35,7 @@ async def getid(client, message):
         and not message.forward_from_chat
         and not reply.sender_chat
     ):
-        text += f"**[ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ ɪᴅ:]({reply.link})** `{reply.message_id}`\n"
+        text += f"**[ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ ɪᴅ:]({reply.link})** `{reply.message.id}`\n"
         text += f"**[ʀᴇᴘʟɪᴇᴅ ᴜsᴇʀ ɪᴅ:](tg://user?id={reply.from_user.id})** `{reply.from_user.id}`\n\n"
 
     if reply and reply.forward_from_chat:
@@ -49,5 +49,5 @@ async def getid(client, message):
     await message.reply_text(
         text,
         disable_web_page_preview=True,
-        parse_mode="md",
+        parse_mode=ParseMode.DEFAULT,
     )
