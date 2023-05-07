@@ -16,6 +16,7 @@ from Mickey.modules.helpers import (
     DEV_OP,
     HELP_BTN,
     HELP_BUTN,
+    CLOSE_BTN,
     HELP_READ,
     HELP_START,
     SOURCE_READ,
@@ -55,7 +56,7 @@ async def start(_, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@MickeyBot.on_message(
+@dev.on_message(
     filters.command(["help"], prefixes=["+", ".", "/", "-", "?", "$"])
 )
 async def help(client: MickeyBot, m: Message):
