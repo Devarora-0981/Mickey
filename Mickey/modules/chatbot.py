@@ -14,14 +14,13 @@ from Mickey.modules.helpers import is_admins
 
 
 @MickeyBot.on_message(filters.command(["chatbot"]) & filters.group & ~filters.bot)
+@is_admin
 async def chaton_off(_, message: Message):
-    if not message.from_user:
+    try:
+        await message.delete()
+    except:
         return
-    else:
-        if message.from_user.id not in (is_admins(message.chat.id)):
-            return await message.reply_text("**ʏᴏᴜ ᴀʀᴇ'ɴᴛ ᴀɴ ᴀᴅᴍɪɴ.**")
-        else:
-            await message.reply_text(
+             await message.reply_text(
                 text="» <u>**ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**</u>",
                 reply_markup=InlineKeyboardMarkup(CHATBOT_ON),
             )
