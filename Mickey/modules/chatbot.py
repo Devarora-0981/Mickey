@@ -10,7 +10,7 @@ from pyrogram.types import InlineKeyboardMarkup, Message
 
 from config import MONGO_URL
 from Mickey import MickeyBot
-from Mickey.modules.helpers import is_admins, CHATBOT_ON
+from Mickey.modules.helpers import CHATBOT_ON, is_admins
 
 
 @MickeyBot.on_message(filters.command(["chatbot"]) & filters.group & ~filters.bot)
