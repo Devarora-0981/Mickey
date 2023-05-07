@@ -250,7 +250,9 @@ async def chatbot_pvt(client: Client, message: Message):
 
 
 @MickeyBot.on_message(
-    (filters.sticker | filters.sticker | filters.group) & ~filters.private & ~filters.bot,
+    (filters.sticker | filters.sticker | filters.group)
+    & ~filters.private
+    & ~filters.bot,
 )
 async def chatbot_sticker_pvt(client: Client, message: Message):
     try:
