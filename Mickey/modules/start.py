@@ -24,7 +24,7 @@ from Mickey.modules.helpers import (
 
 
 @MickeyBot.on_message(
-    filters.command(["start", "aistart"]) & filters.group | filters.private
+    filters.command(["start", "aistart"]) & ~filters.bot
 )
 async def start(_, m: Message):
     if m.chat.type == ChatType.PRIVATE:
@@ -77,7 +77,7 @@ async def help(client: MickeyBot, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@MickeyBot.on_message(filters.command("repo"))
+@MickeyBot.on_message(filters.command("repo") & filters.group & ~filters.bot)
 async def repo(_, m: Message):
     await m.reply_text(
         text=SOURCE_READ,
