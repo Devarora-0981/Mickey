@@ -9,7 +9,7 @@ from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 from config import EMOJIOS, IMG, STICKER
-from Mickey import BOT_NAME, MickeyBot
+from Mickey import BOT_NAME, MickeyBot, dev
 from Mickey.database.chats import add_served_chat
 from Mickey.database.users import add_served_user
 from Mickey.modules.helpers import (
@@ -75,7 +75,7 @@ async def help(client: MickeyBot, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@MickeyBot.on_message(filters.command("repo") & filters.group & ~filters.bot)
+@dev.on_message(filters.command("repo") & ~filters.bot)
 async def repo(_, m: Message):
     await m.reply_text(
         text=SOURCE_READ,
@@ -84,7 +84,7 @@ async def repo(_, m: Message):
     )
 
 
-@MickeyBot.on_message(filters.new_chat_members)
+@dev.on_message(filters.new_chat_members)
 async def welcome(_, m: Message):
     for member in m.new_chat_members:
         await m.reply_photo(photo=random.choice(IMG), caption=START)
