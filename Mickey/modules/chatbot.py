@@ -18,7 +18,7 @@ async def chaton_off(_, message: Message):
     if not message.from_user:
         return
     else:
-        if message.from_user.id not in (await is_admins(message.chat.id)):
+        if message.from_user.id not in (is_admins(message.chat.id)):
             return await message.reply_text("**ʏᴏᴜ ᴀʀᴇ'ɴᴛ ᴀɴ ᴀᴅᴍɪɴ.**")
         else:
             await message.reply_text(
