@@ -6,7 +6,7 @@ import random
 from pymongo import MongoClient
 from pyrogram import Client, filters
 from pyrogram.enums import ChatAction
-from pyrogram.types import Message, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardMarkup, Message
 
 from config import MONGO_URL
 from Mickey import MickeyBot
