@@ -12,7 +12,7 @@
 <p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Devarora-0981/Mickey"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 <h4 align="center">
-    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʟᴏᴄᴀʟ ʜᴏsᴛ/ ᴠᴘs 」─
+    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʟᴏᴄᴀʟ ʜᴏsᴛ/ᴠᴘs 」─
 </h4>
 
 - Get your [Necessary Variables](https://github.com/Devarora-0981/Mickey/blob/Dev/sample.env)
