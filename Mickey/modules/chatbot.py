@@ -24,7 +24,7 @@ async def chaton_off(_, m: Message):
 
 
 @MickeyBot.on_message(
-    (filters.text | filters.sticker | filters.group) & ~filters.private & ~filters.bot,
+    (filters.text | filters.sticker | filters.group) & ~filters.private & ~filters.bot, group=11
 )
 async def chatbot_text(client: Client, message: Message):
     try:
@@ -113,7 +113,7 @@ async def chatbot_text(client: Client, message: Message):
 
 
 @MickeyBot.on_message(
-    (filters.sticker | filters.group | filters.text) & ~filters.private & ~filters.bot,
+    (filters.sticker | filters.group | filters.text) & ~filters.private & ~filters.bot, group=11
 )
 async def chatbot_sticker(client: Client, message: Message):
     try:
@@ -204,7 +204,7 @@ async def chatbot_sticker(client: Client, message: Message):
 
 
 @MickeyBot.on_message(
-    (filters.text | filters.sticker | filters.group) & ~filters.private & ~filters.bot,
+    (filters.text | filters.sticker | filters.group) & ~filters.private & ~filters.bot, group=11
 )
 async def chatbot_pvt(client: Client, message: Message):
     try:
@@ -253,6 +253,7 @@ async def chatbot_pvt(client: Client, message: Message):
     (filters.sticker | filters.sticker | filters.group)
     & ~filters.private
     & ~filters.bot,
+    group=11,
 )
 async def chatbot_sticker_pvt(client: Client, message: Message):
     try:
