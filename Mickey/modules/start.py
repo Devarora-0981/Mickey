@@ -9,7 +9,7 @@ from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 from config import EMOJIOS, IMG, STICKER
-from Mickey import BOT_NAME, MickeyBot, dev
+from Mickey import MickeyBot
 from Mickey.database.chats import add_served_chat
 from Mickey.database.users import add_served_user
 from Mickey.modules.helpers import (
@@ -24,7 +24,7 @@ from Mickey.modules.helpers import (
 )
 
 
-@dev.on_message(filters.command(["start", "aistart"]) & ~filters.bot)
+@MickeyBot.on_cmd(["start", "aistart"])
 async def start(_, m: Message):
     if m.chat.type == ChatType.PRIVATE:
         accha = await m.reply_text(
@@ -43,7 +43,7 @@ async def start(_, m: Message):
         await umm.delete()
         await m.reply_photo(
             photo=random.choice(IMG),
-            caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ {BOT_NAME}**\n**➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ]**\n<b>||๏ ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ||</b>""",
+            caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ {MickeyBot.name}**\n**➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ]**\n<b>||๏ ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ||</b>""",
             reply_markup=InlineKeyboardMarkup(DEV_OP),
         )
         await add_served_user(m.from_user.id)
@@ -56,7 +56,7 @@ async def start(_, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@dev.on_message(filters.command(["help"], prefixes=["+", ".", "/", "-", "?", "$"]))
+@MickeyBot.on_cmd("help")
 async def help(client: MickeyBot, m: Message):
     if m.chat.type == ChatType.PRIVATE:
         hmm = await m.reply_photo(
@@ -74,7 +74,7 @@ async def help(client: MickeyBot, m: Message):
         await add_served_chat(m.chat.id)
 
 
-@dev.on_message(filters.command("repo") & ~filters.bot)
+@MickeyBot.on_cmd("repo")
 async def repo(_, m: Message):
     await m.reply_text(
         text=SOURCE_READ,
@@ -83,7 +83,7 @@ async def repo(_, m: Message):
     )
 
 
-@dev.on_message(filters.new_chat_members)
+@MickeyBot.on_message(filters.new_chat_members)
 async def welcome(_, m: Message):
     for member in m.new_chat_members:
         await m.reply_photo(photo=random.choice(IMG), caption=START)
