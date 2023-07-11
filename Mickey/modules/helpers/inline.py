@@ -1,7 +1,8 @@
 from pyrogram.types import InlineKeyboardButton
 
 from config import SUPPORT_GRP, UPDATE_CHNL
-from Mickey import BOT_USERNAME, OWNER
+from Mickey import OWNER
+from Mickey import MickeyBot
 
 DEV_OP = [
     [
@@ -11,7 +12,7 @@ DEV_OP = [
     [
         InlineKeyboardButton(
             text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+            url=f"https://t.me/{MickeyBot.username}?startgroup=true",
         ),
     ],
     [
@@ -27,7 +28,7 @@ PNG_BTN = [
     [
         InlineKeyboardButton(
             text="🧸 ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ 🧸",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+            url=f"https://t.me/{MickeyBot.username}?startgroup=true",
         ),
     ],
     [
@@ -106,7 +107,7 @@ HELP_START = [
 HELP_BUTN = [
     [
         InlineKeyboardButton(
-            text="🚀 ʜᴇʟᴘ 🚀", url=f"https://t.me/{BOT_USERNAME}?start=help"
+            text="🚀 ʜᴇʟᴘ 🚀", url=f"https://t.me/{MickeyBot.username}?start=help"
         ),
         InlineKeyboardButton(text="🐳 ᴄʟᴏsᴇ 🐳", callback_data="CLOSE"),
     ],

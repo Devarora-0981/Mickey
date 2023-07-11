@@ -2,7 +2,7 @@ import glob
 from os.path import basename, dirname, isfile
 
 
-async def all_modules():
+def __list_all_modules():
     mod_paths = glob.glob(dirname(__file__) + "/*.py")
 
     all_modules = [
@@ -11,4 +11,8 @@ async def all_modules():
         if isfile(f) and f.endswith(".py") and not f.endswith("__init__.py")
     ]
 
-    return sorted(all_modules)
+    return all_modules
+
+
+ALL_MODULES = sorted(__list_all_modules())
+__all__ = ALL_MODULES + ["ALL_MODULES"]
