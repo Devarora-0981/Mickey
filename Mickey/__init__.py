@@ -30,7 +30,7 @@ class MickeyBot(Client):
             lang_code="en",
             bot_token=config.BOT_TOKEN,
             in_memory=True,
-            parse_mode=ParseMode.HTML,
+            parse_mode=ParseMode.DEFAULT,
         )
 
     async def start(self):
