@@ -14,7 +14,7 @@ from Mickey import MickeyBot
 from Mickey.modules.helpers import CHATBOT_ON, is_admins
 
 
-@Mickey.on_cmd("chatbot", group_only=True)
+@MickeyBot.on_cmd("chatbot", group_only=True)
 @adminsOnly("can_delete_messages")
 async def chaton_(_, m: Message):
     await m.reply_text(
