@@ -1,10 +1,10 @@
 from pyrogram import filters
 from pyrogram.enums import ParseMode
 
-from Mickey import dev
+from Mickey import MickeyBot
 
 
-@dev.on_message(filters.command("id"))
+@MickeyBot.on_cmd("id")
 async def getid(client, message):
     chat = message.chat
     your_id = message.from_user.id
