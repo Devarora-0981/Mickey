@@ -6,11 +6,11 @@ import traceback
 from inspect import getfullargspec
 from io import StringIO
 from time import time
-
+from pyrogram import Client
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from Mickey import OWNER, dev
+from Mickey import OWNER, MickeyBot
 
 
 async def aexec(code, client, message):
@@ -27,19 +27,19 @@ async def edit_or_reply(msg: Message, **kwargs):
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-@dev.on_edited_message(
+@MickeyBot.on_edited_message(
     filters.command("eval")
     & filters.user(OWNER)
     & ~filters.forwarded
     & ~filters.via_bot
 )
-@dev.on_message(
+@MickeyBot.on_message(
     filters.command("eval")
     & filters.user(OWNER)
     & ~filters.forwarded
     & ~filters.via_bot
 )
-async def executor(client: dev, message: Message):
+async def executor(client: MickeyBot, message: Message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="<b>ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴇxᴇᴄᴜᴛᴇ ʙᴀʙʏ ?</b>")
     try:
@@ -112,13 +112,13 @@ async def executor(client: dev, message: Message):
         await edit_or_reply(message, text=final_output, reply_markup=keyboard)
 
 
-@dev.on_callback_query(filters.regex(r"runtime"))
+@MickeyBot.on_cb("runtime")
 async def runtime_func_cq(_, cq):
     runtime = cq.data.split(None, 1)[1]
     await cq.answer(runtime, show_alert=True)
 
 
-@dev.on_callback_query(filters.regex("forceclose"))
+@MickeyBot.on_cb("forceclose")
 async def forceclose_command(_, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
@@ -137,13 +137,13 @@ async def forceclose_command(_, CallbackQuery):
         return
 
 
-@dev.on_edited_message(
+@MickeyBot.on_edited_message(
     filters.command("sh") & filters.user(OWNER) & ~filters.forwarded & ~filters.via_bot
 )
-@dev.on_message(
+@MickeyBot.on_message(
     filters.command("sh") & filters.user(OWNER) & ~filters.forwarded & ~filters.via_bot
 )
-async def shellrunner(client: dev, message: Message):
+async def shellrunner(client: MickeyBot, message: Message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="<b>ᴇxᴀᴍᴩʟᴇ :</b>\n/sh git pull")
     text = message.text.split(None, 1)[1]
